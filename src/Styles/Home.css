@@ -1,0 +1,6 @@
+.home_img_container {
+  width: 99vw;
+}
+.home_img_container img {
+  max-width: 100%;
+}

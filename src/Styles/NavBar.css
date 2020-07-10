@@ -1,0 +1,73 @@
+.header-navbar {
+  border-bottom: 1px solid #c2c2c9;
+}
+.bandeau-pre-header {
+  background-color: black;
+  font-size: 14px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  height: 7vh;
+}
+.bandeau-pre-header-txt {
+  padding-right: 2vw;
+  padding-left: 2vw;
+  text-align: center;
+}
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 15vh;
+  padding-left: 10vw;
+  padding-right: 10vw;
+}
+.header-title {
+  font-weight: 900;
+  font-size: 0.8em;
+  text-align: center;
+  letter-spacing: 1em;
+}
+.header-subtitle {
+  font-weight: normal;
+  font-size: 0.5em;
+}
+.header-icons {
+  display: flex;
+  align-items: center;
+}
+.header-icons-list {
+  display: flex;
+  border: none;
+  border-right: 1px solid #c2c2c9;
+}
+.header-icons-listelmt {
+  padding-right: 2vw;
+  padding-left: 2vw;
+}
+.header-icons-search-input input {
+  border: none;
+  border-bottom: 1px solid #c2c2c9;
+}
+header-icons-search-link:hover {
+  color: black;
+}
+.header-links-section {
+  margin-right: 2vw;
+  margin-left: 2vw;
+  padding-bottom: 20px;
+}
+.header-link {
+  padding-right: 20px;
+  font-size: 0.9em;
+  color: #414141;
+}
+
+.header-link-red {
+  padding-right: 20px;
+  font-size: 0.9em;
+  color: red;
+}

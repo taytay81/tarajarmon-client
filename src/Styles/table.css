@@ -1,0 +1,47 @@
+.AdminBO-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.table-AdminBO {
+  min-width: 70vw;
+  max-width: 80vw;
+  border: 1px solid;
+  border-collapse: collapse;
+}
+
+.table-AdminBO th,
+.table-AdminBO td,
+.table-AdminBO .cell {
+  padding: 10px;
+}
+
+.table-AdminBO thead th {
+  border-right: 1px solid whitesmoke;
+}
+
+.table-AdminBO thead th:last-of-type {
+  border-right: none;
+  border-left: 1px solid whitesmoke;
+}
+
+.table-AdminBO thead {
+  background: black;
+  color: whitesmoke;
+}
+
+.table-AdminBO tbody tr:nth-child(even) {
+  background: #808080;
+  color: whitesmoke;
+}
+
+.table-AdminBO td:not(.name) {
+  text-align: center;
+}
+
+.table-AdminBO .color-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

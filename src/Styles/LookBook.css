@@ -1,0 +1,11 @@
+.lookbook-gridcontainer {
+  display: grid;
+  width: 95vw;
+  padding-top: 7vh;
+}
+.lookbook-row {
+  width: 100%;
+}
+.lookbook-row-image {
+  max-width: 100%;
+}

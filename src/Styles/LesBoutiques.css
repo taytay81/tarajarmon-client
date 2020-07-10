@@ -1,0 +1,24 @@
+.boutique-list {
+  width: 80vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.boutique-element {
+  border-bottom: 1px solid #c2c2c9;
+  padding: 10px;
+}
+
+.boutique-element-l1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.boutique-element-icone {
+  margin-right: 10px;
+}
+.boutique-element-adress {
+  color: #414141;
+  font-size: 0.7em;
+}
