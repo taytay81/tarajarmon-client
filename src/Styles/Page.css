@@ -1,0 +1,9 @@
+.resultat-recheche-titre {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 5vh;
+}
+.page-content {
+  padding-top: 30vh;
+}

@@ -31,7 +31,7 @@ class FormArticle extends Component {
     api
       .get("/produit/type")
       .then((resultat) => {
-        this.setState({ tousLesTypes: resultat.data.type });
+        this.setState({ tousLesTypes: resultat.data.types });
       })
       .catch((err) => {
         console.error(err);

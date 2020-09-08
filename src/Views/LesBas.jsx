@@ -4,13 +4,13 @@ import Footer from "./../Components/Footer";
 import Articles from "../Components/affichage/Articles";
 import "../Styles/Articles.css";
 
-export default function LesRobes() {
+export default function LesBas() {
   return (
     <div>
       <NavBar></NavBar>
       <div className="page-content">
-        <h1 className="titre_article">ROBES</h1>
-        <Articles type="robes"></Articles>
+        <h1 className="titre_article">BAS</h1>
+        <Articles type="maille"></Articles>
       </div>
       <Footer></Footer>
     </div>

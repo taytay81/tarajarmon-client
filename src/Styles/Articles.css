@@ -1,3 +1,6 @@
+.page-content {
+  padding-top: 25vh;
+}
 .article_nav_container {
   display: flex;
   justify-content: space-evenly;
@@ -7,6 +10,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-top: 5vh;
 }
 .articles_container {
   display: flex;
@@ -31,10 +35,13 @@
   padding: 1rem;
   position: relative;
 }
+
+.unArticle_titre {
+  height: 5vh;
+}
 .unArticle_titre,
 .unArticle_prix {
   margin: 0;
-
   font-size: 1em;
 }
 .unArticle_img img {
@@ -46,8 +53,7 @@
   max-width: 80vw;
   align-items: center;
   justify-items: center;
-  border-color: slateblue;
-  border-width: 2px;
+  padding-top: 10vh;
 }
 .article_det_container {
   display: flex;
@@ -65,4 +71,85 @@
 }
 .article_det_taille {
   width: 20vw;
+}
+.article_det_titre {
+  text-transform: uppercase;
+  color: #000;
+
+  line-height: 2em;
+  padding-right: 2vw;
+  padding-left: 2vw;
+}
+.article_det-titre h2 {
+  font-weight: 500;
+}
+.article_det_description {
+  padding-right: 2vw;
+  padding-left: 2vw;
+  color: #000;
+  letter-spacing: 0.05em;
+}
+.article_det_compo {
+  padding-right: 2vw;
+  padding-left: 2vw;
+  margin-top: 5vh;
+}
+.article_det_ref {
+  margin-top: 5vh;
+  padding-right: 2vw;
+  padding-left: 2vw;
+}
+.article_det_ref_span {
+  font-weight: bold;
+  padding-right: 0.5em;
+}
+.article_det_taille {
+  margin-top: 5vh;
+  padding-right: 2vw;
+  padding-left: 2vw;
+}
+.article_det_couleurs {
+  margin-bottom: 5vh;
+  padding-right: 2vw;
+  padding-bottom: 2vw;
+}
+.article_det_couleurs_round {
+  width: 2vw;
+  height: 2vw;
+  border-radius: 80%;
+}
+.article_det_size ul {
+  display: flex;
+  padding: 0;
+}
+.article_det_size_link {
+  padding: 1vw;
+}
+.article_det_size_link:visited {
+  text-decoration: underline;
+}
+.article_det_size_link:hover {
+  text-decoration: underline;
+}
+.article_det_size_link:active {
+  text-decoration: underline;
+}
+
+.article_det_prix h2 {
+  font-weight: 500;
+}
+.article_det_ajout_panier {
+}
+.article_det_ajout_panier_btn {
+  background-color: black;
+  color: white;
+  border-color: black;
+  width: 80%;
+  height: 5vh;
+}
+hr {
+  border-top: dotted 1.5px;
+  margin-top: 3vh;
+  margin-bottom: 5vh;
+  color: grey;
 }

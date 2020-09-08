@@ -1,5 +1,9 @@
 .header-navbar {
   border-bottom: 1px solid #c2c2c9;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+  background-color: blanchedalmond;
 }
 .bandeau-pre-header {
   background-color: black;
@@ -9,8 +13,7 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-
-  height: 7vh;
+  height: 9vh;
 }
 .bandeau-pre-header-txt {
   padding-right: 2vw;
@@ -50,8 +53,15 @@
 }
 .header-icons-search-input input {
   border: none;
+  background-color: blanchedalmond;
   border-bottom: 1px solid #c2c2c9;
 }
+
+.header-icons-search-input input:focus,
+textarea {
+  outline: none !important;
+}
+
 header-icons-search-link:hover {
   color: black;
 }
@@ -59,6 +69,8 @@ header-icons-search-link:hover {
   margin-right: 2vw;
   margin-left: 2vw;
   padding-bottom: 20px;
+  padding-left: 8vw;
+  padding-right: 8vw;
 }
 .header-link {
   padding-right: 20px;

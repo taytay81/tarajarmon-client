@@ -1,3 +1,6 @@
+.page-content {
+  padding-top: 25vh;
+}
 .boutique-list {
   width: 80vw;
   display: flex;
@@ -21,4 +24,7 @@
 .boutique-element-adress {
   color: #414141;
   font-size: 0.7em;
+}
+.page-content {
+  padding-top: 25vh;
 }
