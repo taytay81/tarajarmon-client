@@ -8,13 +8,14 @@ export default class Article_detail extends Component {
     tailles: [],
   };
   componentDidMount() {
-    console.log("test dans l enfant ", this.props.infos);
-    console.log("test dans l enfant compo ", this.props.composition);
+    // on veut ici split en deux tableaux si plus de 3
   }
+
   render() {
     const styles = {
       background: this.props.code_couleur,
     };
+
     return (
       <div className="article_det_container">
         <div className="article_detail">
@@ -54,26 +55,20 @@ export default class Article_detail extends Component {
 
             <div className="article_det_size">
               <ul>
-                <li>
-                  <a className="article_det_size_link">34</a>
-                </li>
-                <li>
-                  <a className="article_det_size_link">36</a>
-                </li>
-                <li>
-                  <a className="article_det_size_link">38</a>
-                </li>
+                {!!this.props.taille_existante1.length &&
+                  this.props.taille_existante1.map((taille, i) => (
+                    <li key={i}>
+                      <a className={taille.css}>{taille.size}</a>
+                    </li>
+                  ))}
               </ul>
               <ul>
-                <li>
-                  <a className="article_det_size_link">40</a>
-                </li>
-                <li>
-                  <a className="article_det_size_link">42</a>
-                </li>
-                <li>
-                  <a className="article_det_size_link">44</a>
-                </li>
+                {!!this.props.taille_existante2.length &&
+                  this.props.taille_existante2.map((taille, i) => (
+                    <li key={i}>
+                      <a className={taille.css}>{taille.size}</a>
+                    </li>
+                  ))}
               </ul>
             </div>
             <div className="article_det_prix">
@@ -81,7 +76,7 @@ export default class Article_detail extends Component {
             </div>
             <div className="article_det_ajout_panier">
               <button className="article_det_ajout_panier_btn">
-                AJOUTER AU PANIER
+                BIENTOT AJOUTER AU PANIER
               </button>
             </div>
           </div>

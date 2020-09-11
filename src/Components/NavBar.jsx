@@ -29,8 +29,11 @@ class NavBar extends Component {
           <div className="bandeau-pre-header">
             <p className="bandeau-pre-header-txt">
               <span>Notre eshop est en cours de developpement !&nbsp;</span>{" "}
-              Bientot La livraison à domicile &nbsp; <br></br> Merci&nbsp; pour
-              votre patience , love &hearts;
+              <br></br>
+              Vous pouvez deja consulter nos modeles de la nouvelle collection ,
+              Bientot L'achat en Ligne &nbsp;
+              <br></br>
+              Merci&nbsp; pour votre patience , love &hearts;
             </p>
           </div>
           <div className="header-container">

@@ -75,10 +75,10 @@
 .article_det_titre {
   text-transform: uppercase;
   color: #000;
-
   line-height: 2em;
   padding-right: 2vw;
   padding-left: 2vw;
+  padding-bottom: 2vh;
 }
 .article_det-titre h2 {
   font-weight: 500;
@@ -122,21 +122,30 @@
   display: flex;
   padding: 0;
 }
+.article_det_size_link_dispo {
+  padding: 1vw;
+  text-align: center;
+  color: black;
+}
 .article_det_size_link {
   padding: 1vw;
+  text-align: center;
+  color: #c2c2c9;
 }
-.article_det_size_link:visited {
+.article_det_size_link_dispo:visited {
   text-decoration: underline;
 }
-.article_det_size_link:hover {
+.article_det_size_link_dispo:hover {
   text-decoration: underline;
 }
-.article_det_size_link:active {
+.article_det_size_link_dispo:active {
   text-decoration: underline;
 }
 
 .article_det_prix h2 {
   font-weight: 500;
+  padding-left: 1vw;
+  margin-bottom: 10vh;
 }
 
 .article_det_ajout_panier_btn {
@@ -144,7 +153,8 @@
   color: white;
   border-color: black;
   width: 80%;
-  height: 5vh;
+  height: 10vh;
+  margin-left: 1vw;
 }
 hr {
   border-top: dotted 1.5px;

@@ -1,12 +1,18 @@
 .lookbook-gridcontainer {
-  display: grid;
-  width: 95vw;
-  padding-top: 7vh;
+  display: flex;
+  max-width: 80%;
+  margin-left: 10vw;
 }
-.lookbook-row {
-  width: 100%;
+.lookbook-column {
+  display: flex;
+  flex-direction: column;
+  width: calc(100% / 3 - 10px);
+  margin: 0px auto;
 }
-.lookbook-row-image {
+.lookbook-column-div-image {
+  padding: 0.5%;
+}
+.lookbook-column-image {
   max-width: 100%;
 }
 .page-content {
