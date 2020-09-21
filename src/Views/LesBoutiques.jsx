@@ -11,8 +11,24 @@ export default function LesBoutiques() {
       <NavBar></NavBar>
 
       <div className="page-content">
-        <h1>3 BOUTIQUES</h1>
         <div className="boutique-list">
+          <h1>3 BOUTIQUES</h1>
+          <div className="boutique-element">
+            <div className="boutique-element-l1">
+              <div className="boutique-elmt-icone">
+                <FontAwesomeIcon color="grey" size="lg" icon={faMapMarkerAlt} />
+              </div>
+              <h3> Tara Jarmon Lac 1 </h3>
+            </div>
+            <div className="boutique-element-adress">
+              Rue du lac Tchad, Berge Du Lac
+              <br></br> Face au Lac Palace.
+              <br></br> Tunis, Tunisie
+              <br></br>
+              tel :+216 719 612 20
+            </div>
+          </div>
+
           <div className="boutique-element">
             <div className="boutique-element-l1">
               <div className="boutique-elmt-icone">
@@ -20,16 +36,29 @@ export default function LesBoutiques() {
               </div>
               <h3> Tara Jarmon Tunisia Mall </h3>
             </div>
-
             <div className="boutique-element-adress">
-              Tunisia Mall
+              Avenue de la Monnaie , Tunisia Mall
               <br></br>1 er etage
               <br></br>
-              tel :+216 98
+              tel :+216 719 694 00
             </div>
           </div>
-          <div className="boutique-element"> boutique 2</div>
-          <div className="boutique-element"> boutique 3</div>
+          <div className="boutique-element">
+            <div className="boutique-element-l1">
+              <div className="boutique-elmt-icone">
+                <FontAwesomeIcon color="grey" size="lg" icon={faMapMarkerAlt} />
+              </div>
+              <h3> Tara Jarmon Gammarth </h3>
+            </div>
+            <div className="boutique-element-adress">
+              Gammarth center a coté de l’hotel <br></br>
+              Residence Zone Touristique <br></br>
+              "Les Côtes de Carthage"
+              <br></br>2070 Gammarth
+              <br></br>
+              tel :+216 717 394 29
+            </div>
+          </div>
         </div>
       </div>
 

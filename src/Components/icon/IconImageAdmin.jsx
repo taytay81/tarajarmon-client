@@ -12,7 +12,7 @@ export default function IconImage({ clbk, image = "" }) {
 
   return (
     <div className={"is-clickable icon-image"} title="change image">
-      {image && <img src={image} alt="user image" />}
+      {image && <img src={image} alt="" />}
       <input
         ref={fileInput}
         type="file"

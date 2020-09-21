@@ -2,7 +2,7 @@
   padding-top: 25vh;
 }
 .boutique-list {
-  width: 80vw;
+  max-width: 80%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -18,12 +18,14 @@
   align-items: center;
   justify-content: center;
 }
-.boutique-element-icone {
+.boutique-elmt-icone {
   margin-right: 10px;
+  padding: 10px;
 }
 .boutique-element-adress {
   color: #414141;
-  font-size: 0.7em;
+  font-size: 0.9em;
+  padding: 10px;
 }
 .page-content {
   padding-top: 25vh;

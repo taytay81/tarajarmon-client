@@ -51,7 +51,7 @@
 .article_detail {
   display: flex;
   max-width: 80vw;
-  align-items: center;
+
   justify-items: center;
   padding-top: 10vh;
 }
@@ -69,9 +69,7 @@
 .article_det_photos img {
   max-width: 100%;
 }
-.article_det_taille {
-  width: 20vw;
-}
+
 .article_det_titre {
   text-transform: uppercase;
   color: #000;
@@ -104,7 +102,7 @@
   padding-right: 0.5em;
 }
 .article_det_taille {
-  margin-top: 5vh;
+  width: 20vw;
   padding-right: 2vw;
   padding-left: 2vw;
 }

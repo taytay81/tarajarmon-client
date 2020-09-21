@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import api from "../api/APIHandler";
 import NavBar from "./../Components/NavBar";
 import Footer from "./../Components/Footer";
-import Article_detail from "../Components/affichage/Article_detail";
+import ArticleDetail from "../Components/affichage/ArticleDetail";
 import "../Styles/Articles.css";
 
 export default class MonArticle extends Component {
@@ -16,6 +16,7 @@ export default class MonArticle extends Component {
     tailleExistante2: [],
     tailleDispo: [],
     type: "",
+    images: [],
   };
 
   componentDidMount() {
@@ -23,10 +24,12 @@ export default class MonArticle extends Component {
       .get(`/articles/detail/${this.props.match.params.id}`)
       .then((article_res) => {
         this.setState({ article: article_res.data[0] });
-        this.getType();
-        this.getComposition();
-        this.getCouleur();
-        this.getTaille();
+        this.setState({ images: article_res.data[0].image });
+        console.log("l article est :", article_res.data[0]);
+        this.getType(article_res.data[0]);
+        this.getComposition(article_res.data[0]);
+        this.getCouleur(article_res.data[0]);
+        this.getTaille(article_res.data[0]);
       })
       .catch((err) => {
         console.error(err);
@@ -35,9 +38,9 @@ export default class MonArticle extends Component {
     //get composition
   }
 
-  getComposition() {
+  getComposition(article) {
     api
-      .get(`/articles/detail/composition/${this.state.article.composition}`)
+      .get(`/articles/detail/composition/${article.composition}`)
       .then((compo) => {
         this.setState({ composition: compo.data.composition });
       })
@@ -46,9 +49,10 @@ export default class MonArticle extends Component {
       });
   }
 
-  getType() {
+  getType(article) {
+    console.log();
     api
-      .get(`/articles/detail/type/${this.state.article.type}`)
+      .get(`/articles/detail/type/${article.type}`)
       .then((type) => {
         this.setState({ type: type.data.type });
       })
@@ -57,9 +61,9 @@ export default class MonArticle extends Component {
       });
   }
 
-  getCouleur() {
+  getCouleur(article) {
     api
-      .get(`/articles/detail/couleur/${this.state.article.couleur}`)
+      .get(`/articles/detail/couleur/${article.couleur}`)
       .then((elt) => {
         this.setState({ couleur: elt.data.couleur });
         this.setState({ code: elt.data.code });
@@ -76,13 +80,11 @@ export default class MonArticle extends Component {
 
     return found;
   }
-  getTaille() {
-    for (let i = 0; i < this.state.article.article_size.length; i++) {
-      if (this.state.article.article_size[i].disponible === true) {
+  getTaille(article) {
+    for (let i = 0; i < article.article_size.length; i++) {
+      if (article.article_size[i].disponible === true) {
         api
-          .get(
-            `/articles/detail/taille/${this.state.article.article_size[i].taille}`
-          )
+          .get(`/articles/detail/taille/${article.article_size[i].taille}`)
           .then((taille) => {
             this.setState({
               tailleDispo: this.state.tailleDispo.concat([taille.data.taille]),
@@ -143,13 +145,11 @@ export default class MonArticle extends Component {
   }
 
   render() {
-    {
-    }
     return (
       <div>
         <NavBar></NavBar>
         <div className="page-content">
-          <Article_detail
+          <ArticleDetail
             infos={this.state.article}
             composition={this.state.composition}
             couleur={this.state.couleur}
@@ -157,7 +157,8 @@ export default class MonArticle extends Component {
             taille_dispo={this.state.tailleDispo}
             taille_existante1={this.state.tailleExistante1}
             taille_existante2={this.state.tailleExistante2}
-          ></Article_detail>
+            images={this.state.images}
+          ></ArticleDetail>
         </div>
         <Footer></Footer>
       </div>

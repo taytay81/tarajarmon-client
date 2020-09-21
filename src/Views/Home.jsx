@@ -12,7 +12,7 @@ export default function Home() {
         <div className="home_img_container">
           <Link className="link" to={`/home`}>
             <img
-              src="../images/frontpage/HP_urban_summer_desktop.jpg"
+              src="../images/frontpage/HP_desktop_visage_FR.jpg"
               alt="frontpage image2"
             ></img>
           </Link>

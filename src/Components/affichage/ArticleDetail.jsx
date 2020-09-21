@@ -1,21 +1,23 @@
 import React, { Component } from "react";
 import ReactTooltip from "react-tooltip";
 
-export default class Article_detail extends Component {
+export default class ArticleDetail extends Component {
   state = {
     compositions: [],
     couleurs: [],
     tailles: [],
+    images: [],
   };
   componentDidMount() {
     // on veut ici split en deux tableaux si plus de 3
+    this.setState({ images: this.props.images });
   }
 
   render() {
     const styles = {
       background: this.props.code_couleur,
     };
-
+    console.log("dans detail ca donne quoi", this.state.images.length);
     return (
       <div className="article_det_container">
         <div className="article_detail">
@@ -34,9 +36,10 @@ export default class Article_detail extends Component {
             </div>
           </div>
           <div className="article_det_photos">
-            <div className="article_det_photos_cont">
-              <img src={this.props.infos.image} alt="image_article" />
-            </div>
+          {this.props.images.map((image, i) => (
+                <img key={i} src={image} alt="image_article" />
+              ))}
+            <div className="article_det_photos_cont"></div>
           </div>
 
           <div className="article_det_taille">

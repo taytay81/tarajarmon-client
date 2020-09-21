@@ -11,6 +11,9 @@ class FormArticle extends Component {
     reference: "",
     image: "",
     imageTmp: "",
+    image2: "",
+    imageTmp2: "",
+    images: [],
     titre: "",
     description: "",
     composition: "",
@@ -59,7 +62,7 @@ class FormArticle extends Component {
         console.error(err);
       });
   }
-
+  //retrieve from the server all the sizes based on the type selected
   getTaille(typeId) {
     api
       .get(`/produit/taille/${typeId}`)
@@ -78,22 +81,22 @@ class FormArticle extends Component {
   }
 
   saveSize(sizeId, sizeQty) {
+    //check if the size already exist with an amount
+    //if yes  update the array with the new amount
+    // if no create a new entry taille Id et quantite
     var arrayWithSize = this.state.tailleAjouter;
-
+    console.log("arraywithsize", arrayWithSize);
     if (arrayWithSize.length > 0) {
       var index = arrayWithSize.findIndex((x) => x.sizeId === sizeId);
-
       if (index !== -1) {
         //replace with the new qty and exit the function
         arrayWithSize.splice(index, 1);
       }
     }
+    console.log("la ou ca bug", sizeId, sizeQty);
+    if (sizeQty === "") sizeQty = 0;
     arrayWithSize.push({ sizeId, sizeQty });
     this.setState({ tailleAjouter: arrayWithSize });
-
-    //check if the size already exist with an amount
-    //if yes  update the array with the new amount
-    // if no create a new entry taille Id et quantite
   }
 
   handleChange = (e) => {
@@ -145,6 +148,12 @@ class FormArticle extends Component {
       });
       return false;
     }
+    if (this.state.image2.length === 0) {
+      this.setState({
+        failTextMessage: "Merci  d' attacher une photo secondaire",
+      });
+      return false;
+    }
 
     if (this.state.tailleAjouter.length === 0) {
       this.setState({
@@ -162,21 +171,22 @@ class FormArticle extends Component {
 
     if (this.Checkform()) {
       const fd = new FormData();
+      console.log("pour voir le tableau d images", this.state.images);
       fd.append("reference", this.state.reference);
-      fd.append("image", this.state.image);
+      fd.append("image", this.state.images[0]);
+      fd.append("image", this.state.images[1]);
       fd.append("titre", this.state.titre);
       fd.append("description", this.state.description);
       fd.append("composition", this.state.composition);
       fd.append("couleur", this.state.couleur);
       fd.append("prix", this.state.prix);
       fd.append("type", this.state.type);
-
+      console.log("l objet fd est ", fd);
       //ajoute le produit dans la base
 
       api
         .post("/produit", fd)
         .then((apiRes) => {
-          console.log("apires we expect to find the product id here ", apiRes);
           //si l ajout du produit s est bien passe alors on ajoute les articles
           var temparticles = this.state.tailleAjouter;
           var nombreArticleAjoute = 0;
@@ -202,6 +212,8 @@ class FormArticle extends Component {
           //remet a zero le tableau de tailles
           this.setState({ image: "" });
           this.setState({ imageTmp: "" });
+          this.setState({ image2: "" });
+          this.setState({ imageTmp2: "" });
           this.setState({ reference: "" });
           this.setState({ titre: "" });
           this.setState({ description: "" });
@@ -215,13 +227,22 @@ class FormArticle extends Component {
     }
   };
 
-  handleImage = (file) => {
+  handleImage = (file, type) => {
     const reader = new FileReader();
     reader.onloadend = () => {
       // when the fileReader ends reading image  ...
       const base64String = reader.result;
       // add the actual file to the state + the tmp logo as a preview before upload
-      this.setState({ image: file, imageTmp: base64String });
+
+      let photos = [...this.state.images];
+      if (type === "image1") {
+        this.setState({ image: file, imageTmp: base64String });
+        photos[0] = file;
+      } else {
+        photos[1] = file;
+        this.setState({ image2: file, imageTmp2: base64String });
+      }
+      this.setState({ images: photos });
     };
     reader.readAsDataURL(file); // read the file from the local disk
   };
@@ -330,11 +351,15 @@ class FormArticle extends Component {
                 <label htmlFor="">Photo principale:</label>
                 <CustomInputFile
                   image={this.state.imageTmp || this.state.image}
-                  clbk={(e) => this.handleImage(e.target.files[0])}
+                  clbk={(e) => this.handleImage(e.target.files[0], "image1")}
                 />
 
                 <label htmlFor="">Photo secondaire:</label>
-                <label htmlFor="">Photo tertiaire:</label>
+
+                <CustomInputFile
+                  image={this.state.imageTmp2 || this.state.image2}
+                  clbk={(e) => this.handleImage(e.target.files[0], "image2")}
+                />
               </div>
               <div className="form-part">
                 {this.state.toutesLesTailles.length > 0 && (

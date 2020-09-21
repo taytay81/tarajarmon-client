@@ -5,7 +5,7 @@ export default class Article extends Component {
     return (
       <div className="unArticle">
         <div className="unArticle_img">
-          <img src={this.props.articleValue.image} alt="" />
+          <img src={this.props.articleValue.image[0]} alt="" />
         </div>
         <h2 className="unArticle_titre">{this.props.articleValue.titre}</h2>
         <div className="unArticle_prix">{this.props.articleValue.prix} dt </div>
