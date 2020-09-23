@@ -8,7 +8,11 @@ class APIHandler {
     this.api = axios.create({
       baseURL: process.env.REACT_APP_BACKEND_URL,
       // withCredentials: infos && infos.credentials ? true : false
-      withCredentials: true,
+      withCredentials: false,
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
+      },
     });
     this.api.interceptors.response.use(
       function (response) {
