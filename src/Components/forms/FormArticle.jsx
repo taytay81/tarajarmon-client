@@ -34,9 +34,11 @@ class FormArticle extends Component {
     api
       .get("/produit/type")
       .then((resultat) => {
+        console.log("ca a marche");
         this.setState({ tousLesTypes: resultat.data.types });
       })
       .catch((err) => {
+        console.log("ca a plante");
         console.error(err);
       });
   }
@@ -75,6 +77,7 @@ class FormArticle extends Component {
   }
 
   componentDidMount() {
+    console.log("on est dans le did mount on essaie de recuperer les infos ");
     this.getType();
     this.getColor();
     this.getComposition();
