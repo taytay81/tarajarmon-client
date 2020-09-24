@@ -10,8 +10,7 @@ class APIHandler {
       // withCredentials: infos && infos.credentials ? true : false
       withCredentials: false,
       headers: {
-        "Access-Control-Allow-Origin": "*",
-        "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
+        "Access-Control-Allow-Origin": process.env.CLIENT_URL,
       },
     });
     this.api.interceptors.response.use(
