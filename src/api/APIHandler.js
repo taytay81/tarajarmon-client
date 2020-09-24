@@ -11,6 +11,9 @@ class APIHandler {
       withCredentials: false,
       headers: {
         "Access-Control-Allow-Origin": process.env.CLIENT_URL,
+        "Access-Control-Allow-Methods":
+          "GET, POST, PATCH, PUT, DELETE, OPTIONS",
+        "Access-Control-Allow-Headers": "Origin, Content-Type, X-Auth-Token",
       },
     });
     this.api.interceptors.response.use(
