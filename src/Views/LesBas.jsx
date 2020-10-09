@@ -10,7 +10,7 @@ export default function LesBas() {
       <NavBar></NavBar>
       <div className="page-content">
         <h1 className="titre_article">BAS</h1>
-        <Articles type="maille"></Articles>
+        <Articles type="Bas"></Articles>
       </div>
       <Footer></Footer>
     </div>

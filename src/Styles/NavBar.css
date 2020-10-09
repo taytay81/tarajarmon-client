@@ -19,6 +19,7 @@
   padding-right: 2vw;
   padding-left: 2vw;
   text-align: center;
+  padding-bottom: 1px;
 }
 .header-container {
   display: flex;
@@ -82,4 +83,36 @@ header-icons-search-link:hover {
   padding-right: 20px;
   font-size: 0.9em;
   color: red;
+}
+@media only screen and (max-width: 1000px) {
+  .header-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+  }
+  .header-title {
+    font-weight: 900;
+    font-size: 0.6em;
+    display: flex;
+    text-align: center;
+    letter-spacing: 1em;
+  }
+  .header-icons {
+    display: none;
+  }
+
+  .header-link {
+    padding-right: 10px;
+    font-size: 0.9em;
+    color: #414141;
+  }
+
+  .header-links-section {
+    margin-right: 2vw;
+    margin-left: 2vw;
+    padding-bottom: 1vh;
+    padding-left: 2vw;
+    padding-right: 2vw;
+  }
 }

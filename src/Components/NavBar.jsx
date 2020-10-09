@@ -94,13 +94,14 @@ class NavBar extends Component {
             >
               NEW IN
             </NavLink>
-            <NavLink
+            {/*<NavLink
               to="/Ceremonies"
               className="header-link"
               activeClassName="is-active"
             >
               CEREMONIES
-            </NavLink>
+            </NavLink>*/}
+
             <NavLink
               to="/LesRobes"
               className="header-link"
@@ -108,13 +109,7 @@ class NavBar extends Component {
             >
               ROBES
             </NavLink>
-            <NavLink
-              to="/ManteauxVestes"
-              className="header-link"
-              activeClassName="is-active"
-            >
-              MANTEAUX & VESTES
-            </NavLink>
+
             <NavLink
               to="/Mailles"
               className="header-link"
@@ -144,6 +139,14 @@ class NavBar extends Component {
               ACCESSOIRES
             </NavLink>
             <NavLink
+              to="/ManteauxVestes"
+              className="header-link"
+              activeClassName="is-active"
+            >
+              MANTEAUX & VESTES
+            </NavLink>
+
+            <NavLink
               to="/TaraStories"
               className="header-link"
               activeClassName="is-active"
@@ -157,13 +160,13 @@ class NavBar extends Component {
             >
               LOOKBOOK
             </NavLink>
-            <NavLink
+            {/*<NavLink
               to="/administration"
               className="header-link-red"
               activeClassName="is-active"
             >
               ADMINISTRATION
-            </NavLink>
+            </NavLink>*/}
           </div>
         </header>
       </form>
