@@ -17,7 +17,7 @@ export default class ArticleDetail extends Component {
     const styles = {
       background: this.props.code_couleur,
     };
-    console.log("dans detail ca donne quoi", this.state.images.length);
+
     return (
       <div className="article_det_container">
         <div className="article_detail">
@@ -36,9 +36,9 @@ export default class ArticleDetail extends Component {
             </div>
           </div>
           <div className="article_det_photos">
-          {this.props.images.map((image, i) => (
-                <img key={i} src={image} alt="image_article" />
-              ))}
+            {this.props.images.map((image, i) => (
+              <img key={i} src={image} alt="image_article" />
+            ))}
             <div className="article_det_photos_cont"></div>
           </div>
 
@@ -82,6 +82,69 @@ export default class ArticleDetail extends Component {
                 BIENTOT AJOUTER AU PANIER
               </button>
             </div>
+          </div>
+        </div>
+        <div className="article_det_mobile">
+          <div className="article_det_titre_mobile">
+            <h3>{this.props.infos.titre}</h3>
+          </div>
+          <div className="article_det_ref_mobile">
+            <span className="article_det_ref_span_mobile">Réf:</span>
+            <span>{this.props.infos.reference}</span>
+            <hr></hr>
+          </div>
+          <div className="article_det_prix_mobile">
+            <h2>{this.props.infos.prix},000 TND</h2>
+          </div>
+          <div className="article_det_photos_mobile">
+            {this.props.images.map((image, i) => (
+              <img key={i} src={image} alt="image_article" />
+            ))}
+          </div>
+          <div>
+            <div
+              className="article_det_couleurs_round_mobile"
+              style={styles}
+              data-tip
+              data-for="couleurTip"
+            ></div>
+            <ReactTooltip id="couleurTip" place="top" effect="solid">
+              {this.props.couleur}
+            </ReactTooltip>
+          </div>
+
+          <div className="article_det_size_mobile">
+            <ul>
+              {!!this.props.taille_existante1.length &&
+                this.props.taille_existante1.map((taille, i) => (
+                  <a key={i} className={taille.css}>
+                    {taille.size}
+                  </a>
+                ))}
+              {!!this.props.taille_existante2.length &&
+                this.props.taille_existante2.map((taille, i) => (
+                  <a key={i} className={taille.css}>
+                    {taille.size}
+                  </a>
+                ))}
+            </ul>
+          </div>
+          <div className="article_det_ajout_panier_mobile">
+            <button className="article_det_ajout_panier_mobile_btn">
+              BIENTOT AJOUTER AU PANIER
+            </button>
+          </div>
+          <div>
+            <hr></hr>
+            <h4>Description :</h4>
+          </div>
+
+          <div className="article_det_description">
+            {this.props.infos.description}
+          </div>
+          <h4>Composition :</h4>
+          <div className="article_det_compo_mobile">
+            {this.props.composition}
           </div>
         </div>
       </div>

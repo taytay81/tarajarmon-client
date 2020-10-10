@@ -19,7 +19,7 @@
   padding-right: 2vw;
   padding-left: 2vw;
   text-align: center;
-  padding-bottom: 1px;
+  padding-bottom: 1vh;
 }
 .header-container {
   display: flex;
@@ -67,11 +67,16 @@ header-icons-search-link:hover {
   color: black;
 }
 .header-links-section {
+  display: flex;
   margin-right: 2vw;
   margin-left: 2vw;
   padding-bottom: 20px;
   padding-left: 8vw;
   padding-right: 8vw;
+}
+.header-links-section ul {
+  margin: 0;
+  padding: 0;
 }
 .header-link {
   padding-right: 20px;
@@ -89,7 +94,9 @@ header-icons-search-link:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 10vh;
+    height: 7vh;
+    padding-left: 10vw;
+    padding-right: 10vw;
   }
   .header-title {
     font-weight: 900;
@@ -114,5 +121,16 @@ header-icons-search-link:hover {
     padding-bottom: 1vh;
     padding-left: 2vw;
     padding-right: 2vw;
+  }
+
+  .bandeau-pre-header {
+    background-color: black;
+    font-size: 14px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 12vh;
   }
 }

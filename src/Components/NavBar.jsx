@@ -87,13 +87,73 @@ class NavBar extends Component {
           </div>
 
           <div className="header-links-section">
-            <NavLink
-              to="/Nouveautes"
-              className="header-link"
-              activeClassName="is-active"
-            >
-              NEW IN
-            </NavLink>
+            <ul>
+              <NavLink
+                to="/Nouveautes"
+                className="header-link"
+                activeClassName="is-active"
+              >
+                NEWIN
+              </NavLink>
+              <NavLink
+                to="/LesRobes"
+                className="header-link"
+                activeClassName="is-active"
+              >
+                ROBES
+              </NavLink>
+              <NavLink
+                to="/Mailles"
+                className="header-link"
+                activeClassName="is-active"
+              >
+                MAILLES
+              </NavLink>
+              <NavLink
+                to="/Tops"
+                className="header-link"
+                activeClassName="is-active"
+              >
+                TOPS
+              </NavLink>
+              <NavLink
+                to="/Bas"
+                className="header-link"
+                activeClassName="is-active"
+              >
+                BAS
+              </NavLink>
+              <NavLink
+                to="/Accessoires"
+                className="header-link"
+                activeClassName="is-active"
+              >
+                ACCESSOIRES
+              </NavLink>
+              <NavLink
+                to="/ManteauxVestes"
+                className="header-link"
+                activeClassName="is-active"
+              >
+                MANTEAUX&VESTES
+              </NavLink>
+
+              <NavLink
+                to="/TaraStories"
+                className="header-link"
+                activeClassName="is-active"
+              >
+                TARA STORIES
+              </NavLink>
+              <NavLink
+                to="/LookBook"
+                className="header-link"
+                activeClassName="is-active"
+              >
+                LOOKBOOK
+              </NavLink>
+            </ul>
+
             {/*<NavLink
               to="/Ceremonies"
               className="header-link"
@@ -102,64 +162,6 @@ class NavBar extends Component {
               CEREMONIES
             </NavLink>*/}
 
-            <NavLink
-              to="/LesRobes"
-              className="header-link"
-              activeClassName="is-active"
-            >
-              ROBES
-            </NavLink>
-
-            <NavLink
-              to="/Mailles"
-              className="header-link"
-              activeClassName="is-active"
-            >
-              MAILLES
-            </NavLink>
-            <NavLink
-              to="/Tops"
-              className="header-link"
-              activeClassName="is-active"
-            >
-              TOPS
-            </NavLink>
-            <NavLink
-              to="/Bas"
-              className="header-link"
-              activeClassName="is-active"
-            >
-              BAS
-            </NavLink>
-            <NavLink
-              to="/Accessoires"
-              className="header-link"
-              activeClassName="is-active"
-            >
-              ACCESSOIRES
-            </NavLink>
-            <NavLink
-              to="/ManteauxVestes"
-              className="header-link"
-              activeClassName="is-active"
-            >
-              MANTEAUX & VESTES
-            </NavLink>
-
-            <NavLink
-              to="/TaraStories"
-              className="header-link"
-              activeClassName="is-active"
-            >
-              TARA STORIES
-            </NavLink>
-            <NavLink
-              to="/LookBook"
-              className="header-link"
-              activeClassName="is-active"
-            >
-              LOOKBOOK
-            </NavLink>
             {/*<NavLink
               to="/administration"
               className="header-link-red"
