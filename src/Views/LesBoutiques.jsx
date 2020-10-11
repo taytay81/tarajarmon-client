@@ -12,13 +12,16 @@ export default function LesBoutiques() {
 
       <div className="page-content">
         <div className="boutique-list">
-          <h1>3 BOUTIQUES</h1>
+          <div className="boutique-title">
+            <h1>3 BOUTIQUES</h1>
+          </div>
+
           <div className="boutique-element">
             <div className="boutique-element-l1">
               <div className="boutique-elmt-icone">
                 <FontAwesomeIcon color="grey" size="lg" icon={faMapMarkerAlt} />
               </div>
-              <h3> Tara Jarmon Lac 1 </h3>
+              <h3> Tara Jarmon Lac 1</h3>
             </div>
             <div className="boutique-element-adress">
               Rue du lac Tchad, Berge Du Lac

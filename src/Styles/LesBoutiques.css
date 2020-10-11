@@ -1,6 +1,9 @@
 .page-content {
   padding-top: 25vh;
 }
+.boutique-title {
+  width: 20vw;
+}
 .boutique-list {
   max-width: 80%;
   display: flex;
@@ -11,12 +14,13 @@
 .boutique-element {
   border-bottom: 1px solid #c2c2c9;
   padding: 10px;
+  width: 20vw;
 }
 
 .boutique-element-l1 {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: start;
 }
 .boutique-elmt-icone {
   margin-right: 10px;

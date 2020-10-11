@@ -28,10 +28,8 @@ class NavBar extends Component {
         <header className="header-navbar">
           <div className="bandeau-pre-header">
             <p className="bandeau-pre-header-txt">
-              <span>Notre eshop est en cours de developpement !&nbsp;</span>{" "}
-              <br></br>
-              Vous pouvez deja consulter nos modeles de la nouvelle collection ,
-              Bientot L'achat en Ligne &nbsp;
+              Consultez nos modeles de la nouvelle collection , Bientot L'achat
+              en Ligne &nbsp;
               <br></br>
               Merci&nbsp; pour votre patience , love &hearts;
             </p>
@@ -88,70 +86,91 @@ class NavBar extends Component {
 
           <div className="header-links-section">
             <ul>
-              <NavLink
-                to="/Nouveautes"
-                className="header-link"
-                activeClassName="is-active"
-              >
-                NEWIN
-              </NavLink>
-              <NavLink
-                to="/LesRobes"
-                className="header-link"
-                activeClassName="is-active"
-              >
-                ROBES
-              </NavLink>
-              <NavLink
-                to="/Mailles"
-                className="header-link"
-                activeClassName="is-active"
-              >
-                MAILLES
-              </NavLink>
-              <NavLink
-                to="/Tops"
-                className="header-link"
-                activeClassName="is-active"
-              >
-                TOPS
-              </NavLink>
-              <NavLink
-                to="/Bas"
-                className="header-link"
-                activeClassName="is-active"
-              >
-                BAS
-              </NavLink>
-              <NavLink
-                to="/Accessoires"
-                className="header-link"
-                activeClassName="is-active"
-              >
-                ACCESSOIRES
-              </NavLink>
-              <NavLink
-                to="/ManteauxVestes"
-                className="header-link"
-                activeClassName="is-active"
-              >
-                MANTEAUX&VESTES
-              </NavLink>
+              <li>
+                <NavLink
+                  to="/Nouveautes"
+                  className="header-link"
+                  activeClassName="is-active"
+                >
+                  NEW IN
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="/LesRobes"
+                  className="header-link"
+                  activeClassName="is-active"
+                >
+                  ROBES
+                </NavLink>
+              </li>
+              <li>
+                {" "}
+                <NavLink
+                  to="/Mailles"
+                  className="header-link"
+                  activeClassName="is-active"
+                >
+                  MAILLES
+                </NavLink>
+              </li>
+              <li>
+                {" "}
+                <NavLink
+                  to="/Tops"
+                  className="header-link"
+                  activeClassName="is-active"
+                >
+                  TOPS
+                </NavLink>
+              </li>
+              <li>
+                {" "}
+                <NavLink
+                  to="/Bas"
+                  className="header-link"
+                  activeClassName="is-active"
+                >
+                  BAS
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="/Accessoires"
+                  className="header-link"
+                  activeClassName="is-active"
+                >
+                  ACCESSOIRES
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="/ManteauxVestes"
+                  className="header-link"
+                  activeClassName="is-active"
+                >
+                  MANTEAUX & VESTES
+                </NavLink>
+              </li>
 
-              <NavLink
-                to="/TaraStories"
-                className="header-link"
-                activeClassName="is-active"
-              >
-                TARA STORIES
-              </NavLink>
-              <NavLink
-                to="/LookBook"
-                className="header-link"
-                activeClassName="is-active"
-              >
-                LOOKBOOK
-              </NavLink>
+              <li>
+                <NavLink
+                  to="/TaraStories"
+                  className="header-link"
+                  activeClassName="is-active"
+                >
+                  TARA STORIES
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="/LookBook"
+                  className="header-link"
+                  activeClassName="is-active"
+                >
+                  LOOKBOOK
+                </NavLink>
+              </li>
             </ul>
 
             {/*<NavLink

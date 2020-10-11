@@ -47,6 +47,8 @@
   display: flex;
   border: none;
   border-right: 1px solid #c2c2c9;
+  margin: 0;
+  padding: 0;
 }
 .header-icons-listelmt {
   padding-right: 2vw;
@@ -67,7 +69,6 @@ header-icons-search-link:hover {
   color: black;
 }
 .header-links-section {
-  display: flex;
   margin-right: 2vw;
   margin-left: 2vw;
   padding-bottom: 20px;
@@ -77,6 +78,7 @@ header-icons-search-link:hover {
 .header-links-section ul {
   margin: 0;
   padding: 0;
+  display: flex;
 }
 .header-link {
   padding-right: 20px;
