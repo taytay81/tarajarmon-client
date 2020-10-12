@@ -1,0 +1,17 @@
+.Breadcrum-container {
+  margin-top: 2vh;
+  font-size: 0.9em;
+  color: #414141;
+  max-width: 50vw;
+  justify-content: center;
+  display: flex;
+}
+
+.Breadcrum-link:hover {
+  color: black;
+  font-weight: bold;
+}
+.Breadcrum-separator {
+  margin-right: 5px;
+  margin-left: 5px;
+}

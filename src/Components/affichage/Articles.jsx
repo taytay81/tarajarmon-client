@@ -4,6 +4,7 @@ import Article from "./Article";
 import ArticleNav from "./Article_nav";
 import "../../Styles/Articles.css";
 import { Link } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 
 export default class articles extends Component {
   //get type in props
@@ -64,7 +65,12 @@ export default class articles extends Component {
                 <Link
                   key={i}
                   className="link"
-                  to={`/articles/detail/${article._id}`}
+                  to={{
+                    pathname: `/articles/detail/${article._id}`,
+                    state: {
+                      breadcrum: this.props.breadcrum,
+                    },
+                  }}
                 >
                   <Article key={i} articleValue={article}></Article>
                 </Link>

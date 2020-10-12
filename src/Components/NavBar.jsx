@@ -28,8 +28,8 @@ class NavBar extends Component {
         <header className="header-navbar">
           <div className="bandeau-pre-header">
             <p className="bandeau-pre-header-txt">
-              Consultez nos modeles de la nouvelle collection , Bientot L'achat
-              en Ligne &nbsp;
+              Voici nos modeles de la nouvelle collection , Bientot L'achat en
+              Ligne. &nbsp;
               <br></br>
               Merci&nbsp; pour votre patience , love &hearts;
             </p>

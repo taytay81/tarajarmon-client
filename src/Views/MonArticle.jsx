@@ -1,9 +1,10 @@
 import React, { Component } from "react";
-
+import { withRouter } from "react-router-dom";
 import api from "../api/APIHandler";
 import NavBar from "./../Components/NavBar";
 import Footer from "./../Components/Footer";
 import ArticleDetail from "../Components/affichage/ArticleDetail";
+import BreadCrum from "./../Components/Breadcrum";
 import "../Styles/Articles.css";
 
 export default class MonArticle extends Component {
@@ -17,6 +18,7 @@ export default class MonArticle extends Component {
     tailleDispo: [],
     type: "",
     images: [],
+    myLinks: [],
   };
 
   componentDidMount() {
@@ -25,17 +27,31 @@ export default class MonArticle extends Component {
       .then((article_res) => {
         this.setState({ article: article_res.data[0] });
         this.setState({ images: article_res.data[0].image });
-        console.log("l article est :", article_res.data[0]);
+
         this.getType(article_res.data[0]);
         this.getComposition(article_res.data[0]);
         this.getCouleur(article_res.data[0]);
         this.getTaille(article_res.data[0]);
+        this.setBreadCrumb(article_res.data[0].titre);
       })
       .catch((err) => {
         console.error(err);
       });
 
     //get composition
+  }
+
+  setBreadCrumb(titre) {
+    var links = this.props.history.location.state.breadcrum;
+    if (links.length > 1) {
+      links[1].separator = ">";
+      links.push({
+        name: titre,
+        link: this.props.history.location.pathname,
+        separator: "",
+      });
+      this.setState({ myLinks: links });
+    }
   }
 
   getComposition(article) {
@@ -50,7 +66,6 @@ export default class MonArticle extends Component {
   }
 
   getType(article) {
-    console.log();
     api
       .get(`/articles/detail/type/${article.type}`)
       .then((type) => {
@@ -145,10 +160,12 @@ export default class MonArticle extends Component {
   }
 
   render() {
+    console.log("test", this.props.history);
     return (
       <div>
         <NavBar></NavBar>
         <div className="page-content">
+          <BreadCrum links={this.state.myLinks}></BreadCrum>
           <ArticleDetail
             infos={this.state.article}
             composition={this.state.composition}
