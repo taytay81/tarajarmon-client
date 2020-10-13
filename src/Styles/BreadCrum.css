@@ -2,9 +2,7 @@
   margin-top: 2vh;
   font-size: 0.9em;
   color: #414141;
-  max-width: 50vw;
-  justify-content: center;
-  display: flex;
+  margin-left: 15vw;
 }
 
 .Breadcrum-link:hover {
@@ -14,4 +12,18 @@
 .Breadcrum-separator {
   margin-right: 5px;
   margin-left: 5px;
+}
+
+@media only screen and (max-width: 1000px) {
+  .Breadcrum-container {
+    margin-top: 2vh;
+    font-size: 0.7em;
+    color: #414141;
+    margin-left: 1vw;
+  }
+
+  .Breadcrum-separator {
+    margin-right: 2px;
+    margin-left: 2px;
+  }
 }
