@@ -34,7 +34,7 @@ class FormArticle extends Component {
     api
       .get("/produit/type")
       .then((resultat) => {
-        console.log("ca a marche");
+       
         this.setState({ tousLesTypes: resultat.data.types });
       })
       .catch((err) => {
@@ -184,7 +184,7 @@ class FormArticle extends Component {
       fd.append("couleur", this.state.couleur);
       fd.append("prix", this.state.prix);
       fd.append("type", this.state.type);
-      console.log("l objet fd est ", fd);
+     
       //ajoute le produit dans la base
 
       api

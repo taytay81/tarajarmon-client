@@ -1,0 +1,103 @@
+.newsletter-form {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  width: 30vw;
+  height: 50vh;
+  top: 40vh;
+  right: 30vw;
+  background-color: hsla(0, 0%, 100%, 0.9);
+  position: fixed;
+}
+
+.newsletter-icon-close {
+  display: flex;
+  justify-content: flex-end;
+  margin: 10px;
+}
+.newsletter-titre {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 20px;
+}
+.newsletter-titre h4 {
+  margin: 0;
+  padding: 0;
+}
+.newsletter-icon-envelope {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.newsletter-txt {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+}
+.newsletter-prenom {
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+}
+.newsletter-prenom input {
+  height: 2.5vh;
+  width: 15vw;
+}
+.newsletter-email {
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+}
+.newsletter-email input {
+  height: 2.5vh;
+  width: 15vw;
+}
+.newsletter-button {
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+}
+.newsletter-button button {
+  height: 5vh;
+  width: 15vw;
+}
+.newsletter-message {
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+}
+.newsletter-submessage {
+  font-size: 0.6em;
+  margin: 20px;
+}
+@media only screen and (max-width: 1000px) {
+  .newsletter-form {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    width: 90vw;
+    height: 50vh;
+    top: 30vh;
+    left: 5vw;
+    box-shadow: 0px 8px 16px 0px rgba(grey);
+    opacity: 80%;
+    background-color: hsla(0, 0%, 100%, 0.9);
+    position: fixed;
+  }
+  .newsletter-email input {
+    height: 3vh;
+    width: 50vw;
+  }
+  .newsletter-prenom input {
+    height: 3vh;
+    width: 50vw;
+  }
+  .newsletter-button button {
+    height: 4vh;
+    width: 50vw;
+  }
+}

@@ -1,6 +1,7 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
 import Home from "./Views/Home";
+import HomewithoutNews from "./Views/HomewithoutNews";
 import Nouveautes from "./Views/Nouveautes";
 import AjoutArticle from "./Views/GestionCatalogue/AjoutArticle";
 import GestionnaireBO from "./Views/GestionCatalogue/GestionnaireBO";
@@ -24,7 +25,7 @@ function App() {
     <div className="App">
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route path="/Home" component={Home} />
+        <Route path="/Home" component={HomewithoutNews} />
         <Route path="/nouveautes" component={Nouveautes} />
         <Route path="/LookBook" component={LookBook} />
         <Route path="/LesBoutiques" component={LesBoutiques} />
