@@ -22,9 +22,18 @@ class NavBar extends Component {
     e.preventDefault();
     this.setState({ search: "" });
   };
+  handleKeypress = (e) => {
+    if (e.key === "Enter") {
+      this.props.history.push("/Resultat/" + this.state.search);
+    }
+  };
   render() {
     return (
-      <form onChange={this.handleChange} onSubmit={this.handleSubmit}>
+      <form
+        onChange={this.handleChange}
+        onSubmit={this.handleSubmit}
+        onKeyPress={this.handleKeypress}
+      >
         <header className="header-navbar">
           <div className="bandeau-pre-header">
             <p className="bandeau-pre-header-txt">
@@ -153,7 +162,7 @@ class NavBar extends Component {
                 </NavLink>
               </li>
 
-              <li>
+              {/*<li>
                 <NavLink
                   to="/TaraStories"
                   className="header-link"
@@ -161,7 +170,7 @@ class NavBar extends Component {
                 >
                   TARA STORIES
                 </NavLink>
-              </li>
+              </li>*/}
               <li>
                 <NavLink
                   to="/LookBook"

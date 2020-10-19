@@ -75,7 +75,7 @@ export default class FormNewsletter extends Component {
         {this.props.showmessage && (
           <div>
             <div className="newsletter-message">
-              Merci de vous etes inscrit , a bientot
+              Merci de vous etres inscrit , a bientot
             </div>
             <div className="newsletter-submessage">
               Pour plus d'informations sur la manière dont vos données

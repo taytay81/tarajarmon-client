@@ -87,6 +87,7 @@ export default class MonArticle extends Component {
         console.error(err);
       });
   }
+  //check which size are available 
   sizeIsDispo(size) {
     var found = false;
     for (let i = 0; i < this.state.tailleDispo.length; i++) {
