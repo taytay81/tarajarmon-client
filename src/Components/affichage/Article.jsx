@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import "../../Styles/Articles.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSpinner } from "@fortawesome/free-solid-svg-icons";
 
 export default class Article extends Component {
   state = {
@@ -24,7 +26,7 @@ export default class Article extends Component {
           />
         </div>
         <div className={this.state.loadingClassNameLogo}>
-          <img src="../icone.jpg" alt="iconeTJ" />
+          <FontAwesomeIcon color="black" size="4x" spin icon={faSpinner} />
         </div>
         <h2 className="unArticle_titre">{this.props.articleValue.titre}</h2>
         <div className="unArticle_prix">{this.props.articleValue.prix} dt </div>
