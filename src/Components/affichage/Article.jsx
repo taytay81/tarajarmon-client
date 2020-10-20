@@ -24,7 +24,7 @@ export default class Article extends Component {
           />
         </div>
         <div className={this.state.loadingClassNameLogo}>
-          <img src="../icone.jpg" alt="" />
+          <img src="../icone.jpg" alt="iconeTJ" />
         </div>
         <h2 className="unArticle_titre">{this.props.articleValue.titre}</h2>
         <div className="unArticle_prix">{this.props.articleValue.prix} dt </div>
