@@ -56,33 +56,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: blueviolet;
 }
 
-@keyframes toColor {
-  0% {
-    -webkit-filter: grayscale(100%);
-    filter: grayscale(100%);
-  }
-  25% {
-    -webkit-filter: grayscale(75%);
-    filter: grayscale(75%);
-  }
-  50% {
-    -webkit-filter: grayscale(50%);
-    filter: grayscale(50%);
-  }
-  75% {
-    -webkit-filter: grayscale(25%);
-    filter: grayscale(25%);
-  }
-  100% {
-    -webkit-filter: grayscale(0%);
-    filter: grayscale(0%);
-  }
-}
-.unArticle_loading_logo_visible img {
-  animation: toColor 1s;
-}
 .unArticle_loading_logo_visible img {
   max-width: 100%;
 }
@@ -93,7 +69,6 @@
 .article_detail {
   display: flex;
   max-width: 80vw;
-
   justify-items: center;
   padding-top: 5vh;
 }
@@ -105,11 +80,62 @@
 .article_det_infos {
   width: 20vw;
 }
-.article_det_photos {
+
+.article_det_photos_visible {
   width: 40vw;
 }
-.article_det_photos img {
+.article_det_photos_visible img {
   max-width: 100%;
+}
+.article_det_photos_hidden {
+  display: none;
+}
+
+@-webkit-keyframes pulsate-bck {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+@keyframes pulsate-bck {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+.article_det_loading_logo_visible {
+  width: 40vw;
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: blueviolet;
+}
+.article_det_loading_logo_visible img {
+  max-width: 100%;
+  width: 5vw;
+  -webkit-animation: pulsate-bck 0.5s ease-in-out infinite both;
+  animation: pulsate-bck 0.5s ease-in-out infinite both;
+}
+.article_det_loading_logo_hidden {
+  display: none;
 }
 
 .article_det_titre {

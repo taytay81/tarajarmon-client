@@ -8,6 +8,8 @@ export default class ArticleDetail extends Component {
     tailles: [],
     images: [],
     linkClassName: "article-det-linkhidden",
+    loadingClassNameimg: " article_det_photos_hidden",
+    loadingClassNameLogo: "article_det_loading_logo_visible",
   };
   componentDidMount() {
     // on veut ici split en deux tableaux si plus de 3
@@ -15,8 +17,13 @@ export default class ArticleDetail extends Component {
   }
 
   handleClick() {
-    console.log("clickS");
     this.setState({ linkClassName: "article-det-linkvisible" });
+  }
+
+  changeLoadingImg() {
+    console.log("loaded");
+    this.setState({ loadingClassNameimg: "article_det_photos_visible" });
+    this.setState({ loadingClassNameLogo: "article_det_loading_logo_hidden" });
   }
   render() {
     const styles = {
@@ -40,11 +47,18 @@ export default class ArticleDetail extends Component {
               <hr></hr>
             </div>
           </div>
-          <div className="article_det_photos">
+          <div className={this.state.loadingClassNameimg}>
             {this.props.images.map((image, i) => (
-              <img key={i} src={image} alt="image_article" />
+              <img
+                key={i}
+                src={image}
+                alt="image_article"
+                onLoad={() => this.changeLoadingImg()}
+              />
             ))}
-            <div className="article_det_photos_cont"></div>
+          </div>
+          <div className={this.state.loadingClassNameLogo}>
+            <img src="../../icone.jpg" alt="iconeTJ" />
           </div>
 
           <div className="article_det_taille">

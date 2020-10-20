@@ -19,7 +19,7 @@ export default class Article extends Component {
         <div className={this.state.loadingClassNameimg}>
           <img
             src={this.props.articleValue.image[0]}
-            alt=""
+            alt="article_img"
             onLoad={() => this.changeLoadingImg()}
           />
         </div>
