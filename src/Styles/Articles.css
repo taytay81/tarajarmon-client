@@ -217,6 +217,23 @@ hr {
 .article_det_compo_mobile {
   margin-bottom: 10vh;
 }
+.article-det-linkhidden {
+  display: none;
+}
+.article-det-linkvisible {
+  display: visible;
+  margin: 10px;
+  font-size: 0.8em;
+}
+.article-det-linkvisible a {
+  text-decoration: underline;
+  font-weight: bold;
+}
+.article-det-linkvisible a:hover {
+  color: grey;
+  transform: scale(1.5);
+}
+
 @media only screen and (max-width: 1000px) {
   .article_detail {
     display: none;

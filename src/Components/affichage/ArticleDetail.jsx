@@ -7,12 +7,17 @@ export default class ArticleDetail extends Component {
     couleurs: [],
     tailles: [],
     images: [],
+    linkClassName: "article-det-linkhidden",
   };
   componentDidMount() {
     // on veut ici split en deux tableaux si plus de 3
     this.setState({ images: this.props.images });
   }
 
+  handleClick() {
+    console.log("clickS");
+    this.setState({ linkClassName: "article-det-linkvisible" });
+  }
   render() {
     const styles = {
       background: this.props.code_couleur,
@@ -78,9 +83,17 @@ export default class ArticleDetail extends Component {
               <h2>{this.props.infos.prix},000 TND</h2>
             </div>
             <div className="article_det_ajout_panier">
-              <button className="article_det_ajout_panier_btn">
-                BIENTOT AJOUTER AU PANIER
+              <button
+                className="article_det_ajout_panier_btn"
+                onClick={() => this.handleClick()}
+              >
+                ACHETER
               </button>
+              <div className={this.state.linkClassName}>
+                Bonne Nouvelle , L'article est disponible . <br></br>
+                <a href="/LesBoutiques">Contactez votre magasin </a>
+                le plus proche pour le reserver .
+              </div>
             </div>
           </div>
         </div>
