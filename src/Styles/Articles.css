@@ -10,7 +10,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 5vh;
+  padding-top: 1vh;
 }
 .articles_container {
   display: flex;
@@ -44,8 +44,24 @@
   margin: 0;
   font-size: 1em;
 }
-.unArticle_img img {
+.unArticle_img_hidden {
+  display: none;
+}
+.unArticle_img_visible img {
   max-width: 100%;
+}
+.unArticle_loading_logo_visible {
+  width: 25vw;
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.unArticle_loading_logo_visible img {
+  max-width: 100%;
+}
+.unArticle_loading_logo_hidden {
+  display: none;
 }
 
 .article_detail {
