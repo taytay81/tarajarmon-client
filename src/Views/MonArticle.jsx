@@ -87,7 +87,7 @@ export default class MonArticle extends Component {
         console.error(err);
       });
   }
-  //check which size are available 
+  //check which size are available
   sizeIsDispo(size) {
     var found = false;
     for (let i = 0; i < this.state.tailleDispo.length; i++) {
@@ -96,17 +96,24 @@ export default class MonArticle extends Component {
 
     return found;
   }
+
+  /** cette fonction va recuperer toutes les taille disponible en stock et les mettre dans un tableau
+   *  elle va aussi mettre a jour la variable taille dispo dans le state */
   getTaille(article) {
+    var tailledisponible = [];
+
     for (let i = 0; i < article.article_size.length; i++) {
       if (article.article_size[i].disponible === true) {
         api
           .get(`/articles/detail/taille/${article.article_size[i].taille}`)
           .then((taille) => {
+            tailledisponible = tailledisponible.concat([taille.data.taille]);
+
+            //on est oblige d appeler cette fonction et de faire le setstate ici car ci on le fait plus bas la valeur tailldisponible est nulle
+            this.getTailleExistante(tailledisponible);
             this.setState({
-              tailleDispo: this.state.tailleDispo.concat([taille.data.taille]),
+              tailleDispo: tailledisponible,
             });
-            //on recupere les tailles existantes apres avoir recuperer les tailles dispo
-            this.getTailleExistante();
           })
           .catch((err) => {
             console.error(err);
@@ -115,36 +122,54 @@ export default class MonArticle extends Component {
     }
   }
 
-  getTailleExistante() {
-    // si chaussures
-    let items1 = [...this.state.tailleExistante1];
-    let items2 = [...this.state.tailleExistante2];
-    let sizeList = "";
-    if (this.state.article.type === "chaussures")
+  /** cette fonction va dans un premier temps recuperer le type de taille
+   * dans un deuxieme temps elle va creer 2 tableaux qui correspondent au deux lignes visible
+   * elle va egelement leur donner une classe css si l article est dispo ou pas pour le styling
+   */
+  getTailleExistante(tailledisponible) {
+    var items1 = [...this.state.tailleExistante1];
+    var items2 = [...this.state.tailleExistante2];
+
+    var sizeList = [];
+    var article = this.state.article;
+
+    /** cherche le type de taille et va creer un tableau sizelist les contenants dispo ou pas   */
+
+    if (article.type === "chaussures")
       sizeList = ["36", "37", "38", "39", "40", "41"];
-    else if (this.state.article.type === "ceinture")
-      sizeList = ["70", "80", "90"];
+    else if (article.type === "ceinture") sizeList = ["70", "80", "90"];
     else if (
-      this.state.article.type.match("bijoux", "sac", "acc.textile", "lunettes")
+      article.type === "bijoux" ||
+      article.type === "sac" ||
+      article.type === "acc.textile" ||
+      article.type === "lunettes"
     )
       sizeList = ["TU"];
     else {
-      if (this.state.tailleDispo.length > 0) {
-        for (let i = 0; i < this.state.tailleDispo.length; i++) {
-          if (this.state.tailleDispo[i].match("s", "m", "l"))
-            sizeList = ["s", "m", "l"];
-          else sizeList = ["34", "36", "38", "40", "42", "44"];
+      if (tailledisponible.length > 0) {
+        if (
+          tailledisponible[0] == "s" ||
+          tailledisponible[0] == "m" ||
+          tailledisponible[0] == "l"
+        ) {
+          sizeList = ["s", "m", "l"];
+        } else {
+          sizeList = ["34", "36", "38", "40", "42", "44"];
         }
-      } else sizeList = ["34", "36", "38", "40", "42", "44"];
+      } else {
+        sizeList = ["34", "36", "38", "40", "42", "44"];
+      }
     }
+
+    /* recupere les tailles dispo dans le type de taille et attribue la bonne classe css  */
 
     for (let i = 0; i < sizeList.length; i++) {
       if (i < 3) {
         let item = { ...items1[i] };
         item.size = sizeList[i];
-        if (this.sizeIsDispo(sizeList[i]))
+        if (this.sizeIsDispo(sizeList[i])) {
           item.css = "article_det_size_link_dispo";
-        else item.css = "article_det_size_link";
+        } else item.css = "article_det_size_link";
         items1[i] = item;
       } else {
         let item = { ...items2[i - 3] };
@@ -155,13 +180,12 @@ export default class MonArticle extends Component {
         items2[i - 3] = item;
       }
     }
-
+    // met a jour les deux elements les deux lignes contenant les tailles et leur css
     this.setState({ tailleExistante1: items1 });
     this.setState({ tailleExistante2: items2 });
   }
 
   render() {
-    console.log("test", this.props.history);
     return (
       <div>
         <NavBar></NavBar>

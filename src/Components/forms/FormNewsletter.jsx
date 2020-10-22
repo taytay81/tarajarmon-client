@@ -26,7 +26,7 @@ export default class FormNewsletter extends Component {
         {!this.props.showmessage && (
           <div>
             <div className="newsletter-txt">
-              Inscrivez-vous pour etre informes des promotions et de l'arrivee
+              Inscrivez-vous pour etre informés des promotions et de l'arrivée
               des nouvelles collections !
             </div>
             <div className="newsletter-prenom">
@@ -70,20 +70,17 @@ export default class FormNewsletter extends Component {
                 </Button>
               </Form.Item>
             </div>
+            <div className="newsletter-submessage">
+              Pour plus d'informations sur la manière dont vos données
+              personnelles sont traitées, consultez
+              <a href="/"> notre politique de confidentialité </a>et nos
+              <a href="/"> conditions générales de vente </a>
+            </div>
           </div>
         )}
         {this.props.showmessage && (
           <div>
-            <div className="newsletter-message">
-              Merci de vous etres inscrit , a bientot
-            </div>
-            <div className="newsletter-submessage">
-              Pour plus d'informations sur la manière dont vos données
-              personnelles sont traitées, consultez
-              <Link to="">notre politique de confidentialité</Link>
-              et nos
-              <Link to="">conditions générales de vente</Link>
-            </div>
+            <div className="newsletter-message">{this.props.message}</div>
           </div>
         )}
       </Form>

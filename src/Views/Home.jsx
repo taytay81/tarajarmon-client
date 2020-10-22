@@ -13,20 +13,32 @@ class Home extends Component {
     email: "",
     prenom: "",
     message: false,
+    messagetxt: "",
   };
 
   handleSendEmail = (email, prenom) => {
     const newContat = { prenom: prenom, email: email };
-    
+    var addedaccount = false;
     api
       .post("/newsLetter/newUser", newContat)
       .then((resultat) => {
-       
+        addedaccount = true;
+        this.setState({ message: true });
+        this.setState({
+          messagetxt: " Merci de vous etres inscrit, a bientot",
+        });
       })
       .catch((err) => {
         console.error(err);
       });
-    this.setState({ message: true });
+    console.log();
+    if (addedaccount === false) {
+      this.setState({ message: true });
+      this.setState({
+        messagetxt:
+          "Vous etes deja inscrit a la Newsletter, Merci et a bientot",
+      });
+    }
   };
 
   handleOnChangeEmail = (email) => {
@@ -35,7 +47,6 @@ class Home extends Component {
     });
   };
   handleOnChangePrenom = (prenom) => {
-    
     this.setState({
       prenom: prenom,
     });
@@ -62,6 +73,7 @@ class Home extends Component {
               email={this.state.email}
               prenom={this.state.prenom}
               showmessage={this.state.message}
+              message={this.state.messagetxt}
             ></Newsletter>
           </div>
         </div>
