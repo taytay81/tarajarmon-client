@@ -91,6 +91,7 @@ export default class MonArticle extends Component {
   sizeIsDispo(size) {
     var found = false;
     for (let i = 0; i < this.state.tailleDispo.length; i++) {
+      console.log("dispo", size, this.state.tailleDispo[i]);
       if (this.state.tailleDispo[i] === size) found = true;
     }
 
@@ -134,15 +135,15 @@ export default class MonArticle extends Component {
     var article = this.state.article;
 
     /** cherche le type de taille et va creer un tableau sizelist les contenants dispo ou pas   */
-
+    console.log(article.type);
     if (article.type === "chaussures")
       sizeList = ["36", "37", "38", "39", "40", "41"];
     else if (article.type === "ceinture") sizeList = ["70", "80", "90"];
     else if (
-      article.type === "bijoux" ||
-      article.type === "sac" ||
-      article.type === "acc.textile" ||
-      article.type === "lunettes"
+      article.type == "bijoux" ||
+      article.type == "sac" ||
+      article.type == "acc. textile" ||
+      article.type == "lunettes"
     )
       sizeList = ["TU"];
     else {
