@@ -135,7 +135,7 @@ export default class MonArticle extends Component {
     var article = this.state.article;
 
     /** cherche le type de taille et va creer un tableau sizelist les contenants dispo ou pas   */
-    console.log(article.type);
+    console.log("le type", article.type);
     if (article.type === "chaussures")
       sizeList = ["36", "37", "38", "39", "40", "41"];
     else if (article.type === "ceinture") sizeList = ["70", "80", "90"];
