@@ -96,7 +96,7 @@ class FormArticle extends Component {
         arrayWithSize.splice(index, 1);
       }
     }
-    console.log("la ou ca bug", sizeId, sizeQty);
+    
     if (sizeQty === "") sizeQty = 0;
     arrayWithSize.push({ sizeId, sizeQty });
     this.setState({ tailleAjouter: arrayWithSize });

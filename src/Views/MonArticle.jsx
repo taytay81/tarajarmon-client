@@ -27,7 +27,6 @@ export default class MonArticle extends Component {
       .then((article_res) => {
         this.setState({ article: article_res.data[0] });
         this.setState({ images: article_res.data[0].image });
-
         this.getType(article_res.data[0]);
         this.getComposition(article_res.data[0]);
         this.getCouleur(article_res.data[0]);
@@ -87,15 +86,20 @@ export default class MonArticle extends Component {
         console.error(err);
       });
   }
+
+
   //check which size are available
   sizeIsDispo(size) {
-    var found = false;
+  
     for (let i = 0; i < this.state.tailleDispo.length; i++) {
-      console.log("dispo", size, this.state.tailleDispo[i]);
-      if (this.state.tailleDispo[i] === size) found = true;
+      console.log("boucle des dispo",  this.state.tailleDispo[i]);
+      console.log("size",size)
+      if (this.state.tailleDispo[i] == size) {
+        return true
+        }
     }
-
-    return found;
+console.log("voila ce qu on retourne a la fin ")
+    return false;
   }
 
   /** cette fonction va recuperer toutes les taille disponible en stock et les mettre dans un tableau
@@ -109,18 +113,24 @@ export default class MonArticle extends Component {
           .get(`/articles/detail/taille/${article.article_size[i].taille}`)
           .then((taille) => {
             tailledisponible = tailledisponible.concat([taille.data.taille]);
+            console.log("tailledisponible",tailledisponible)
 
             //on est oblige d appeler cette fonction et de faire le setstate ici car ci on le fait plus bas la valeur tailldisponible est nulle
-            this.getTailleExistante(tailledisponible);
+            
             this.setState({
               tailleDispo: tailledisponible,
             });
+            this.getTailleExistante(this.state.tailleDispo);
+
+            
           })
           .catch((err) => {
             console.error(err);
           });
+          
       }
     }
+    
   }
 
   /** cette fonction va dans un premier temps recuperer le type de taille
@@ -128,24 +138,26 @@ export default class MonArticle extends Component {
    * elle va egelement leur donner une classe css si l article est dispo ou pas pour le styling
    */
   getTailleExistante(tailledisponible) {
+    console.log("tailledispo",tailledisponible)
     var items1 = [...this.state.tailleExistante1];
     var items2 = [...this.state.tailleExistante2];
 
     var sizeList = [];
-    var article = this.state.article;
+  
+    var articleType=this.state.type
 
     /** cherche le type de taille et va creer un tableau sizelist les contenants dispo ou pas   */
-    console.log("le type", article.type);
-    if (article.type === "chaussures")
+   
+    if (articleType === "chaussures")
       sizeList = ["36", "37", "38", "39", "40", "41"];
-    else if (article.type === "ceinture") sizeList = ["70", "80", "90"];
+    else if (articleType === "ceinture") sizeList = ["70", "80", "90"];
     else if (
-      article.type == "bijoux" ||
-      article.type == "sac" ||
-      article.type == "acc. textile" ||
-      article.type == "lunettes"
+      articleType === "bijoux" ||
+      articleType === "sac" ||
+      articleType === "acc. textile" ||
+      articleType === "lunettes"
     )
-      sizeList = ["TU"];
+      sizeList = ["tu"];
     else {
       if (tailledisponible.length > 0) {
         if (
@@ -163,14 +175,20 @@ export default class MonArticle extends Component {
     }
 
     /* recupere les tailles dispo dans le type de taille et attribue la bonne classe css  */
-
+console.log("debug prod sizelist",sizeList);
     for (let i = 0; i < sizeList.length; i++) {
       if (i < 3) {
         let item = { ...items1[i] };
         item.size = sizeList[i];
+        console.log("debug prod element pour la fonction dispo",sizeList[i]);
         if (this.sizeIsDispo(sizeList[i])) {
           item.css = "article_det_size_link_dispo";
-        } else item.css = "article_det_size_link";
+          console.log("debug prod dispo",this.sizeIsDispo(sizeList[i]))
+        } 
+        
+        else {
+          console.log("debug prod nondispo",this.sizeIsDispo(sizeList[i]))
+          item.css = "article_det_size_link";}
         items1[i] = item;
       } else {
         let item = { ...items2[i - 3] };

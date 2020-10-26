@@ -148,6 +148,7 @@
 .article_det_size ul {
   display: flex;
   padding: 0;
+  text-transform: uppercase;
 }
 .article_det_size_link_dispo {
   padding: 1vw;
