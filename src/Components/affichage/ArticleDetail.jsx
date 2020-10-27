@@ -161,16 +161,22 @@ export default class ArticleDetail extends Component {
             </ul>
           </div>
           <div className="article_det_ajout_panier_mobile">
-            <button className="article_det_ajout_panier_mobile_btn">
-              BIENTOT AJOUTER AU PANIER
+            <button className="article_det_ajout_panier_mobile_btn" 
+            onClick={() => this.handleClick()}>
+              ACHETER
             </button>
+            <div className={this.state.linkClassName}>
+                Bonne Nouvelle , L'article est disponible . <br></br>
+                <a href="/LesBoutiques">Contactez votre magasin </a>
+                le plus proche pour le reserver .
+              </div>
           </div>
           <div>
             <hr></hr>
             <h4>Description :</h4>
           </div>
 
-          <div className="article_det_description">
+          <div className="article_det_description_mobile">
             {this.props.infos.description}
           </div>
           <h4>Composition :</h4>

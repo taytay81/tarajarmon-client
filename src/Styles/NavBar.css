@@ -16,8 +16,8 @@
   height: 9vh;
 }
 .bandeau-pre-header-txt {
-  padding-right: 2vw;
-  padding-left: 2vw;
+  padding: 0 2vw;
+
   text-align: center;
   padding-bottom: 1vh;
 }
@@ -51,8 +51,7 @@
   padding: 0;
 }
 .header-icons-listelmt {
-  padding-right: 2vw;
-  padding-left: 2vw;
+  padding: 0 2vw;
 }
 .header-icons-search-input input {
   border: none;
@@ -69,11 +68,8 @@ header-icons-search-link:hover {
   color: black;
 }
 .header-links-section {
-  margin-right: 2vw;
-  margin-left: 2vw;
-  padding-bottom: 20px;
-  padding-left: 8vw;
-  padding-right: 8vw;
+  margin: 0 2vw;
+  padding: 0 8vw 20px 8vw;
 }
 .header-links-section ul {
   margin: 0;
@@ -91,8 +87,11 @@ header-icons-search-link:hover {
   font-size: 0.9em;
   color: red;
 }
+.header-links-section-mobile {
+  display: none;
+}
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 768px) {
   .header-container {
     display: flex;
     justify-content: center;
@@ -108,32 +107,66 @@ header-icons-search-link:hover {
     text-align: center;
     letter-spacing: 1em;
   }
+  .header-title h1 {
+    font-weight: 900;
+    font-size: 1.5em;
+  }
   .header-icons {
     display: none;
   }
 
   .header-link {
     padding-right: 10px;
-    font-size: 0.9em;
+    font-size: 0.7em;
     color: #414141;
   }
 
   .header-links-section {
-    margin-right: 2vw;
-    margin-left: 2vw;
-    padding-bottom: 1vh;
-    padding-left: 2vw;
-    padding-right: 2vw;
+    display: none;
+  }
+  .header-links-section-mobile {
+    display: flex;
+    flex-direction: column;
+  }
+  .header-links-section-mobile ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+  }
+  .header-links-icons-mobile {
+    display: flex;
   }
 
   .bandeau-pre-header {
     background-color: black;
-    font-size: 14px;
+    font-size: 0.7em;
     color: white;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    height: 12vh;
+    height: 7vh;
+  }
+  .bandeau-pre-header-txt {
+    padding: 0 1vw;
+    text-align: center;
+    padding-bottom: 1vh;
+  }
+  .header-icons-search-input input {
+    border: none;
+    background-color: blanchedalmond;
+    border-bottom: 1px solid #c2c2c9;
+    width: 10vw;
+  }
+  .header-icons-address-link {
+    padding-right: 10px;
+  }
+  .header-icons-list {
+    display: flex;
+    border: none;
+
+    margin: 0;
+    padding: 0;
   }
 }

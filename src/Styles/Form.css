@@ -118,3 +118,8 @@
 .form > .input + .icon {
   margin-left: 20px;
 }
+@media only screen and (max-width: 768px) {
+  .page-content {
+    padding-top: 22vh;
+  }
+}

@@ -9,7 +9,7 @@ export default class Article extends Component {
     loadingClassNameLogo: "unArticle_loading_logo_visible",
   };
   changeLoadingImg() {
-    console.log("loaded");
+    
     this.setState({ loadingClassNameimg: "unArticle_img_visible" });
     this.setState({ loadingClassNameLogo: "unArticle_loading_logo_hidden" });
   }

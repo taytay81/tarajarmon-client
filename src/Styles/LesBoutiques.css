@@ -31,6 +31,9 @@
   font-size: 0.9em;
   padding: 10px;
 }
-.page-content {
-  padding-top: 25vh;
+
+@media only screen and (max-width: 768px) {
+  .page-content {
+    padding-top: 22vh;
+  }
 }

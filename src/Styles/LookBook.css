@@ -18,3 +18,8 @@
 .page-content {
   padding-top: 25vh;
 }
+@media only screen and (max-width: 768px) {
+  .page-content {
+    padding-top: 22vh;
+  }
+}

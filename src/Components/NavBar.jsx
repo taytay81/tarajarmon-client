@@ -198,6 +198,125 @@ class NavBar extends Component {
               ADMINISTRATION
             </NavLink>*/}
           </div>
+
+          <div className="header-links-section-mobile">
+            <ul>
+              <li className="header-links-icons-mobile">
+              
+              <div className="header-icons-search-input">
+                <input
+                  name="search"
+                  id="search"
+                  type="text"
+                  className="input"
+                  defaultValue={this.state.search}
+                />
+              </div>
+
+              <ul className="header-icons-list">
+                <li className="header-icons-listelmt">
+                  <Link
+                    className="header-icons-search-link"
+                    to={`/Resultat/${this.state.search}`}
+                  >
+                    <FontAwesomeIcon color="grey" size="xs" icon={faSearch} />
+                  </Link>
+                </li>
+                <li className="header-icons-listelmt">
+                  <a className="header-icons-address-link" href="/LesBoutiques">
+                    <FontAwesomeIcon
+                      color="grey"
+                      size="xs"
+                      icon={faMapMarkerAlt}
+                    />
+                  </a>
+                </li>
+                </ul>
+              </li>
+              <li>
+                <NavLink
+                  to="/Nouveautes"
+                  className="header-link"
+                  activeClassName="is-active"
+                >
+                  NEW IN
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="/LesRobes"
+                  className="header-link"
+                  activeClassName="is-active"
+                >
+                  ROBES
+                </NavLink>
+              </li>
+              <li>
+                {" "}
+                <NavLink
+                  to="/Mailles"
+                  className="header-link"
+                  activeClassName="is-active"
+                >
+                  MAILLES
+                </NavLink>
+              </li>
+              
+              <li>
+                {" "}
+                <NavLink
+                  to="/Tops"
+                  className="header-link"
+                  activeClassName="is-active"
+                >
+                  TOPS
+                </NavLink>
+              </li>
+              </ul>
+              
+              <ul>
+              
+              <li>
+                {" "}
+                <NavLink
+                  to="/Bas"
+                  className="header-link"
+                  activeClassName="is-active"
+                >
+                  BAS
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="/Accessoires"
+                  className="header-link"
+                  activeClassName="is-active"
+                >
+                  ACCESSOIRES
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="/ManteauxVestes"
+                  className="header-link"
+                  activeClassName="is-active"
+                >
+                  MANTEAUX & VESTES
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="/LookBook"
+                  className="header-link"
+                  activeClassName="is-active"
+                >
+                  LOOKBOOK
+                </NavLink>
+              </li>
+            </ul>
+
+           
+          </div>
         </header>
       </form>
     );

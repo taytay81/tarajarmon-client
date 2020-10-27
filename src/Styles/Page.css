@@ -5,5 +5,11 @@
   padding-top: 5vh;
 }
 .page-content {
-  padding-top: 30vh;
+  padding-top: 25vh;
+}
+
+@media only screen and (max-width: 768px) {
+  .page-content {
+    padding-top: 22vh;
+  }
 }
