@@ -39,6 +39,10 @@
   font-weight: normal;
   font-size: 0.5em;
 }
+.header-title p {
+  display: flex;
+  flex-direction: column;
+}
 .header-icons {
   display: flex;
   align-items: center;
@@ -104,6 +108,7 @@ header-icons-search-link:hover {
     font-weight: 900;
     font-size: 0.6em;
     display: flex;
+    flex-direction: column;
     text-align: center;
     letter-spacing: 1em;
   }

@@ -48,7 +48,7 @@ class NavBar extends Component {
               <h1>
                 <a href="/home">
                   <p>
-                    TARA JARMON<br></br>
+                    TARA JARMON
                     <span className="header-subtitle"> TUNISIE </span>
                   </p>
                 </a>

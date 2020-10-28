@@ -15,7 +15,7 @@ export default class Article extends Component {
   }
 
   render() {
-    console.log("test", this.props.articleValue.image[0]);
+    
     return (
       <div className="unArticle">
         <div className={this.state.loadingClassNameimg}>

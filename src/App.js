@@ -22,18 +22,23 @@ import Tops from "./Views/LesTops";
 
 import WithUser from "./Views/WithUser";
 
-const trackingId = "G-01FJEHG9DS"; // Replace with your Google Analytics tracking ID
+//google analytics
+console.log("test 1", ReactGA);
+const trackingId = "G-RWHK7EF25Z"; // Replace with your Google Analytics tracking ID
 const history = createBrowserHistory();
 ReactGA.initialize(trackingId);
+ReactGA.pageview("/home");
 /*ReactGA.set({
   userId: auth.currentUserId(),
   // any data that is relevant to the user session
   // that you would like to track with google analytics
 });*/
 history.listen((location) => {
+  console.log("on rentre dans la fonction ", location.pathname);
   ReactGA.set({ page: location.pathname }); // Update the user's current page
   ReactGA.pageview(location.pathname); // Record a pageview for the given page
 });
+console.log("test 2", ReactGA);
 
 function App() {
   return (
