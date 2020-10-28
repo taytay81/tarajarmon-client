@@ -26,7 +26,24 @@ import WithUser from "./Views/WithUser";
 console.log("test 1", ReactGA);
 const trackingId = "G-RWHK7EF25Z"; // Replace with your Google Analytics tracking ID
 const history = createBrowserHistory();
-ReactGA.initialize(trackingId);
+ReactGA.initialize(
+  [
+    {
+      trackingId: trackingId,
+      gaOptions: {
+        name: "tracker1",
+        userId: 123,
+      },
+    },
+    {
+      trackingId: trackingId,
+      gaOptions: { name: "tracker2" },
+    },
+  ],
+  { debug: true, alwaysSendToDefaultTracker: false }
+);
+
+/*ReactGA.initialize(trackingId);*/
 ReactGA.pageview("/home");
 /*ReactGA.set({
   userId: auth.currentUserId(),
