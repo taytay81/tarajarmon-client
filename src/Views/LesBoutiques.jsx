@@ -1,16 +1,22 @@
 import React from "react";
 import NavBar from "./../Components/NavBar";
 import Footer from "./../Components/Footer";
+import BreadCrum from "./../Components/Breadcrum";
 import "./../Styles/LesBoutiques.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMapMarkerAlt } from "@fortawesome/free-solid-svg-icons";
 
 export default function LesBoutiques() {
+  const myLinks = [
+    { name: "Accueil", link: "/home", separator: ">" },
+    { name: " Les Boutiques", link: "/LesBoutiques", separator: "" },
+  ];
   return (
     <div>
       <NavBar></NavBar>
 
       <div className="page-content">
+      <BreadCrum links={myLinks}></BreadCrum>
         <div className="boutique-list">
           <div className="boutique-title">
             <h1>3 BOUTIQUES</h1>

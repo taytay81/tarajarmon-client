@@ -202,13 +202,20 @@ hr {
   padding-left: 2vw;
   padding-right: 2vw;
 }
+.article_det_mobile h2 {
+  margin: 0;
+}
+.article_det_mobile h3 {
+  margin: 0;
+}
 .article_det_titre_mobile {
   text-transform: uppercase;
   color: #000;
-
   text-align: center;
-  height: 10vh;
+  height: 8vh;
   font-size: 0.8em;
+  display: flex;
+  align-items: center;
 }
 
 .article_det_ref_mobile {

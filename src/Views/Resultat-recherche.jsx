@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Articles from "../Components/affichage/Articles";
 import NavBar from "./../Components/NavBar";
 import Footer from "./../Components/Footer";
+import BreadCrum from "./../Components/Breadcrum";
 import "../Styles/Page.css";
 export default class Resultats extends Component {
   state = {
@@ -21,15 +22,20 @@ export default class Resultats extends Component {
   }
 
   render() {
+    const myLinks = [
+      { name: "Accueil", link: "/home", separator: ">" },
+      { name: " Resultats de recherche", link: "/Resultat/"+this.state.element, separator: "" },
+    ];
     return (
       <div>
         <NavBar></NavBar>
         <div className="page-content">
+        <BreadCrum links={myLinks}></BreadCrum>
           <div className="resultat-recheche-titre">
             <h1>RÉSULTATS DE RECHERCHE POUR "{this.state.element}" </h1>
           </div>
 
-          <Articles recherche={this.state.element}></Articles>
+          <Articles recherche={this.state.element} breadcrum={myLinks}></Articles>
         </div>
         <Footer></Footer>
       </div>

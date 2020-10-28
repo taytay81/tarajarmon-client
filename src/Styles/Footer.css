@@ -10,3 +10,18 @@
 .Footer-icones-element {
   padding: 10px;
 }
+.Footer-icones-list-mobile {
+  display: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .Footer-icones-list {
+    display: none;
+  }
+  .Footer-icones-list-mobile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: visible;
+  }
+}

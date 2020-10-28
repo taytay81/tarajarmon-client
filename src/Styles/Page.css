@@ -2,7 +2,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 5vh;
+  padding-top: 1vh;
 }
 .page-content {
   padding-top: 25vh;
@@ -11,5 +11,13 @@
 @media only screen and (max-width: 768px) {
   .page-content {
     padding-top: 22vh;
+  }
+  .resultat-recheche-titre {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 0;
+    padding-right: 10px;
+    padding-left: 10px;
   }
 }

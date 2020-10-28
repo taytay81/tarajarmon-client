@@ -122,7 +122,7 @@ export default class ArticleDetail extends Component {
           <div className="article_det_ref_mobile">
             <span className="article_det_ref_span_mobile">Réf:</span>
             <span>{this.props.infos.reference}</span>
-            <hr></hr>
+            
           </div>
           <div className="article_det_prix_mobile">
             <h2>{this.props.infos.prix},000 TND</h2>

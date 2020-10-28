@@ -33,6 +33,28 @@ export default class Footer extends Component {
             </a>
           </li>
         </ul>
+        <ul className="Footer-icones-list-mobile">
+          <li className="Footer-icones-element">
+            <a
+              className="footer-icons-facebook-link"
+              href="https://www.facebook.com/tarajarmontunis"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FontAwesomeIcon color="grey" size="2x" icon={faFacebookSquare} />
+            </a>
+          </li>
+          <li className="Footer-icones-element">
+            <a
+              className="footer-icons-instagram-link"
+              href="https://www.instagram.com/tara_jarmon_tun/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FontAwesomeIcon color="grey" size="2x" icon={faInstagram} />
+            </a>
+          </li>
+        </ul>
       </div>
     );
   }
