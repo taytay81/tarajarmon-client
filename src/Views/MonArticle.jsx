@@ -92,13 +92,11 @@ export default class MonArticle extends Component {
   sizeIsDispo(size) {
   
     for (let i = 0; i < this.state.tailleDispo.length; i++) {
-      console.log("boucle des dispo",  this.state.tailleDispo[i]);
-      console.log("size",size)
       if (this.state.tailleDispo[i] == size) {
         return true
         }
     }
-console.log("voila ce qu on retourne a la fin ")
+
     return false;
   }
 
@@ -113,7 +111,7 @@ console.log("voila ce qu on retourne a la fin ")
           .get(`/articles/detail/taille/${article.article_size[i].taille}`)
           .then((taille) => {
             tailledisponible = tailledisponible.concat([taille.data.taille]);
-            console.log("tailledisponible",tailledisponible)
+           
 
             //on est oblige d appeler cette fonction et de faire le setstate ici car ci on le fait plus bas la valeur tailldisponible est nulle
             
@@ -138,7 +136,7 @@ console.log("voila ce qu on retourne a la fin ")
    * elle va egelement leur donner une classe css si l article est dispo ou pas pour le styling
    */
   getTailleExistante(tailledisponible) {
-    console.log("tailledispo",tailledisponible)
+    
     var items1 = [...this.state.tailleExistante1];
     var items2 = [...this.state.tailleExistante2];
 
@@ -175,19 +173,19 @@ console.log("voila ce qu on retourne a la fin ")
     }
 
     /* recupere les tailles dispo dans le type de taille et attribue la bonne classe css  */
-console.log("debug prod sizelist",sizeList);
+
     for (let i = 0; i < sizeList.length; i++) {
       if (i < 3) {
         let item = { ...items1[i] };
         item.size = sizeList[i];
-        console.log("debug prod element pour la fonction dispo",sizeList[i]);
+        
         if (this.sizeIsDispo(sizeList[i])) {
           item.css = "article_det_size_link_dispo";
-          console.log("debug prod dispo",this.sizeIsDispo(sizeList[i]))
+         
         } 
         
         else {
-          console.log("debug prod nondispo",this.sizeIsDispo(sizeList[i]))
+         
           item.css = "article_det_size_link";}
         items1[i] = item;
       } else {

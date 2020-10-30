@@ -67,14 +67,23 @@ class NavBar extends Component {
               </div>
 
               <ul className="header-icons-list">
-                <li className="header-icons-listelmt">
-                  <Link
+              {this.state.search && 
+              <li className="header-icons-listelmt">
+                   <Link
                     className="header-icons-search-link"
                     to={`/Resultat/${this.state.search}`}
                   >
                     <FontAwesomeIcon color="grey" size="lg" icon={faSearch} />
                   </Link>
-                </li>
+                  </li>}
+                  {!this.state.search && 
+              <li className="header-icons-listelmt">
+                   <div className="header-icons-search-link"> <FontAwesomeIcon color="grey" size="lg" icon={faSearch} /></div>
+                 
+                   
+                  
+                  </li>}  
+                  
                 <li className="header-icons-listelmt">
                   <a className="header-icons-address-link" href="/LesBoutiques">
                     <FontAwesomeIcon

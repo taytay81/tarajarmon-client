@@ -6,11 +6,13 @@
 }
 .page-content {
   padding-top: 25vh;
+  padding-bottom: 2vh;
 }
 
 @media only screen and (max-width: 768px) {
   .page-content {
     padding-top: 22vh;
+    padding-bottom: 2vh;
   }
   .resultat-recheche-titre {
     display: flex;

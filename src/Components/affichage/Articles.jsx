@@ -23,6 +23,7 @@ export default class articles extends Component {
           console.error(err);
         });
     }
+  console.log("this.props.recherche",this.props.recherche)
     if (this.props.recherche) {
       api
         .get("/articles/recherche/" + this.props.recherche)
@@ -36,12 +37,15 @@ export default class articles extends Component {
   }
   // le update ne marche que pour la recherche car l affichage par type n est dispo qu a l ouverture de la page .
   componentDidUpdate(prevProps) {
-    if (this.props.recherche !== prevProps.recherche) {
-      console.log("les props article ont change ");
+    
+    if (this.props.recherche !== prevProps.recherche ) {
+      
       api
         .get("/articles/recherche/" + this.props.recherche)
         .then((resultat) => {
+          
           this.setState({ allArticlesAvailable: resultat.data });
+          
         })
         .catch((err) => {
           console.error(err);

@@ -1,5 +1,6 @@
 .page-content {
   padding-top: 25vh;
+  padding-bottom: 2vh;
 }
 .home_img_container {
   width: 99vw;
@@ -16,5 +17,6 @@
 
   .page-content {
     padding-top: 22vh;
+    padding-bottom: 2vh;
   }
 }

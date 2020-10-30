@@ -44,7 +44,9 @@ ReactGA.initialize(
 );
 
 /*ReactGA.initialize(trackingId);*/
-ReactGA.pageview("/home");
+ReactGA.set({ page: "/home" }, ["tracker1"]);
+ReactGA.pageview("/home", ["tracker1"]);
+
 /*ReactGA.set({
   userId: auth.currentUserId(),
   // any data that is relevant to the user session
@@ -52,8 +54,9 @@ ReactGA.pageview("/home");
 });*/
 history.listen((location) => {
   console.log("on rentre dans la fonction ", location.pathname);
-  ReactGA.set({ page: location.pathname }); // Update the user's current page
-  ReactGA.pageview(location.pathname); // Record a pageview for the given page
+  ReactGA.set({ page: location.pathname }, ["tracker2"]);
+  // Update the user's current page
+  ReactGA.pageview(location.pathname, ["tracker2"]); // Record a pageview for the given page
 });
 console.log("test 2", ReactGA);
 

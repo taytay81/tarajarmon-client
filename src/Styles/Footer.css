@@ -1,11 +1,11 @@
 .Footer {
   border-top: 1px solid #c2c2c9;
-  height: 10vh;
 }
 .Footer-icones-list {
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 5vh;
 }
 .Footer-icones-element {
   padding: 10px;
@@ -20,6 +20,7 @@
   }
   .Footer-icones-list-mobile {
     display: flex;
+    height: 5vh;
     align-items: center;
     justify-content: center;
     display: visible;

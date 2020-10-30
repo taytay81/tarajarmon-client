@@ -9,7 +9,7 @@ export default class Nouveautes extends Component {
   render() {
     const myLinks = [
       { name: "Accueil", link: "/home", separator: ">" },
-      { name: " Les Nouveautes", link: "/Nouveautes", separator: "" },
+      { name: "New In", link: "/Nouveautes", separator: "" },
     ];
     return (
       <div>

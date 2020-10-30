@@ -72,9 +72,9 @@ export default class FormNewsletter extends Component {
             </div>
             <div className="newsletter-submessage">
               Pour plus d'informations sur la manière dont vos données
-              personnelles sont traitées, consultez
-              <a href="/"> notre politique de confidentialité </a>et nos
-              <a href="/"> conditions générales de vente </a>
+              personnelles sont traitées, consultez&nbsp; 
+              <a href="/">notre politique de confidentialité </a>et nos&nbsp; 
+              <a href="/">conditions générales de vente </a>
             </div>
           </div>
         )}

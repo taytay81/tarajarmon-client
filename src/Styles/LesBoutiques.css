@@ -1,5 +1,6 @@
 .page-content {
   padding-top: 25vh;
+  padding-bottom: 2vh;
 }
 .boutique-title {
   width: 20vw;
@@ -35,6 +36,7 @@
 @media only screen and (max-width: 768px) {
   .page-content {
     padding-top: 22vh;
+    padding-bottom: 2vh;
   }
   .boutique-title {
     width: 100vw;

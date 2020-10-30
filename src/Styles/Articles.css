@@ -1,5 +1,6 @@
 .page-content {
   padding-top: 25vh;
+  padding-bottom: 2vh;
 }
 .article_nav_container {
   display: flex;
@@ -11,6 +12,7 @@
   justify-content: center;
   align-items: center;
   padding-top: 1vh;
+  margin: 0;
 }
 .articles_container {
   display: flex;
@@ -46,6 +48,7 @@
 }
 .unArticle_img_visible img {
   max-width: 100%;
+  height: 50vh;
 }
 .unArticle_loading_logo_visible {
   width: 25vw;
@@ -288,6 +291,7 @@ hr {
   }
   .page-content {
     padding-top: 22vh;
+    padding-bottom: 2vh;
   }
   .titre_article {
     display: flex;
