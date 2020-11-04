@@ -23,7 +23,7 @@ import Tops from "./Views/LesTops";
 import WithUser from "./Views/WithUser";
 
 //google analytics
-console.log("test 1", ReactGA);
+//console.log("test 1", ReactGA);
 const trackingId = "G-RWHK7EF25Z"; // Replace with your Google Analytics tracking ID
 const history = createBrowserHistory();
 ReactGA.initialize(
@@ -40,10 +40,10 @@ ReactGA.initialize(
       gaOptions: { name: "tracker2" },
     },
   ],
-  { debug: true, alwaysSendToDefaultTracker: false }
+  { /*debug: true, */ alwaysSendToDefaultTracker: false }
 );
 
-/*ReactGA.initialize(trackingId);*/
+ReactGA.initialize(trackingId);
 ReactGA.set({ page: "/home" }, ["tracker1"]);
 ReactGA.pageview("/home", ["tracker1"]);
 
@@ -53,12 +53,12 @@ ReactGA.pageview("/home", ["tracker1"]);
   // that you would like to track with google analytics
 });*/
 history.listen((location) => {
-  console.log("on rentre dans la fonction ", location.pathname);
+  //console.log("on rentre dans la fonction ", location.pathname);
   ReactGA.set({ page: location.pathname }, ["tracker2"]);
   // Update the user's current page
   ReactGA.pageview(location.pathname, ["tracker2"]); // Record a pageview for the given page
 });
-console.log("test 2", ReactGA);
+//console.log("test 2", ReactGA);
 
 function App() {
   return (

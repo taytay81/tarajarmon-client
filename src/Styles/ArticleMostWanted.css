@@ -1,0 +1,9 @@
+.slider-content {
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+}
+.slider-content h2 {
+  display: flex;
+
+  justify-content: center;
+}

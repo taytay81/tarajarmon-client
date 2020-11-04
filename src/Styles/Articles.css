@@ -43,6 +43,12 @@
   margin: 0;
   font-size: 1em;
 }
+.unArticle_titre {
+  height: 6vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .unArticle_img_hidden {
   display: none;
 }

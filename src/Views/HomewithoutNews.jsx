@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 //used to be be able to acccess history
 import { withRouter } from "react-router-dom";
+import Mostwanted from "./../Components/affichage/ArticleMostWanted"
 import NavBar from "../Components/NavBar";
 import Footer from "../Components/Footer";
 
@@ -22,6 +23,7 @@ class HomewithoutNews extends Component {
             </Link>
           </div>
         </div>
+        <Mostwanted></Mostwanted>
         <Footer></Footer>
       </div>
     );

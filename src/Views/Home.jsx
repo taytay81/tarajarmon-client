@@ -4,6 +4,7 @@ import { withRouter } from "react-router-dom";
 import NavBar from "./../Components/NavBar";
 import Footer from "./../Components/Footer";
 import Newsletter from "./../Components/forms/FormNewsletter";
+import Mostwanted from "./../Components/affichage/ArticleMostWanted"
 import "./../Styles/Home.css";
 import { Link } from "react-router-dom";
 import api from "../api/APIHandler";
@@ -77,6 +78,8 @@ class Home extends Component {
             ></Newsletter>
           </div>
         </div>
+        
+        <Mostwanted></Mostwanted>
         <Footer></Footer>
       </div>
     );
